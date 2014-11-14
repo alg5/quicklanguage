@@ -17,7 +17,7 @@ class v_1_0_0 extends \phpbb\db\migration\migration
 		return isset($this->config['quicklanguage_version']) && version_compare($this->config['quicklanguage_version'], '1.0.*', '>=');
 	}
 
-	 public function update_schema()
+	public function update_schema()
 	{
 		return 	array();
 	}
@@ -27,7 +27,6 @@ class v_1_0_0 extends \phpbb\db\migration\migration
 		return 	array();
 	}
 
-	 
 	public function update_data()
 	{
 		return array(
@@ -35,7 +34,7 @@ class v_1_0_0 extends \phpbb\db\migration\migration
 			array('config.add', array('quick_language_allow_guests', '1')),
 			array('config.add', array('quick_language_is_english_show', '1')),
 
-		    // Add ACP modules
+			// Add ACP modules
 			array('module.add', array('acp', 'ACP_CAT_DOT_MODS', 'ACP_QUICK_LANGUAGE')),
 
 			array('module.add', array('acp', 'ACP_QUICK_LANGUAGE', array(
@@ -43,7 +42,7 @@ class v_1_0_0 extends \phpbb\db\migration\migration
 					'module_langname'	=> 'ACP_QUICK_LANGUAGE_SETTINGS',
 					'module_mode'		=> 'quicklanguage',
 					'module_auth'		=> 'ext_alg/quicklanguage && acl_a_board',
-			    ))),
+				))),
 		);
 	}
 
