@@ -1,0 +1,13 @@
+services:
+    alg.quicklanguage.listener:
+        class: alg\quicklanguage\event\listener
+        arguments:
+            - @config
+            - @dbal.conn
+            - @request
+            - @template
+            - @user
+            - %core.root_path%
+            - %core.php_ext%
+        tags:
+            - { name: event.listener }
