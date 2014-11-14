@@ -12,7 +12,7 @@ namespace alg\quicklanguage\acp;
 
 class quicklanguage_info
 {
-	
+
 	function module()
 	{
 		return array(

@@ -30,8 +30,8 @@ class listener implements EventSubscriberInterface
 		$this->php_ext = $php_ext;
 
 		// Setup the common settings
-		$this->allow_guests = isset($config['quick_language_allow_guests']) ? (bool)$config['quick_language_allow_guests'] : true;
-		$this->is_english_show = isset($config['quick_language_is_english_show']) ? (bool)$config['quick_language_is_english_show'] : true;
+		$this->allow_guests = isset($config['quick_language_allow_guests']) ? (bool) $config['quick_language_allow_guests'] : true;
+		$this->is_english_show = isset($config['quick_language_is_english_show']) ? (bool) $config['quick_language_is_english_show'] : true;
 		$this->error = listener::OK;
 	}
 
@@ -57,7 +57,7 @@ class listener implements EventSubscriberInterface
 				$this->lang_info[] = $row;
 				if (!($row['lang_iso'] == 'en' && !$this->is_english_show))
 				{
-					 $counter++;
+					$counter++;
 				}
 		}
 		$this->db->sql_freeresult($result);
@@ -75,15 +75,15 @@ class listener implements EventSubscriberInterface
 		{
 			if ($event['user_data']['is_registered'])
 			{
-				 return;
+				return;
 			}
 			else	 //user is guest
 			{
-				 if ($this->current_lang != $this->config['default_lang'])
-				 {
-						$event['user_lang_name'] = $this->current_lang;
-				 }
-				 return;
+				if ($this->current_lang != $this->config['default_lang'])
+				{
+					$event['user_lang_name'] = $this->current_lang;
+				}
+				return;
 			}
 
 		}
@@ -94,12 +94,12 @@ class listener implements EventSubscriberInterface
 
 		if ($res == '')
 		{
-			$this->error = listener::QUICK_LANG_NO;	
+			$this->error = listener::QUICK_LANG_NO;
 			return;
 		}
 		if ($res == 'en' && !$this->is_english_show)
 		{
-			$this->error = listener::QUICK_LANG_EN_DISABLE;	
+			$this->error = listener::QUICK_LANG_EN_DISABLE;
 			return;
 		}
 
@@ -109,11 +109,11 @@ class listener implements EventSubscriberInterface
 			if ($new_lang != $event['user_data']['user_lang'])
 			{
 				//change user lang preference
-				 $sql = "UPDATE "  . USERS_TABLE . " SET user_lang = '" . $new_lang . "' WHERE user_id=" . (int)$event['user_data']['user_id'];
-				 $this->db->sql_query($sql);
-				 $event['user_lang_name'] = $new_lang;
-				 $this->current_lang = $new_lang;
-				 return;
+				$sql = "UPDATE "  . USERS_TABLE . " SET user_lang = '" . $new_lang . "' WHERE user_id=" . (int)$event['user_data']['user_id'];
+				$this->db->sql_query($sql);
+				$event['user_lang_name'] = $new_lang;
+				$this->current_lang = $new_lang;
+				return;
 			}
 		}
 		// guest (not bot)
@@ -122,12 +122,12 @@ class listener implements EventSubscriberInterface
 			if ($new_lang != $this->current_lang)
 			{
 				//change guest lang preference
-			$this->user->set_cookie('quicklang', $new_lang, 0);
-				 $event['user_lang_name'] = $new_lang;
-				 $this->current_lang = $new_lang;
+				$this->user->set_cookie('quicklang', $new_lang, 0);
+				$event['user_lang_name'] = $new_lang;
+				$this->current_lang = $new_lang;
 			}
 		}
-	 }
+	}
 
 	public function page_header_after($event)
 	{
@@ -140,7 +140,7 @@ class listener implements EventSubscriberInterface
 
 		$this->template->assign_vars(array(
 			'U_QUICK_LANG_ACTION'	=>  $url_back,
-			'S_QUICK_LANGUAGE_ENABLE'	=>	(bool)$this->quick_language_enable,
+			'S_QUICK_LANGUAGE_ENABLE'	=> (bool) $this->quick_language_enable,
 			'S_CURRENT_LANG'	=>	$this->current_lang,
 			//'U_FORUM_LS_PATH'				  => append_sid("{$this->phpbb_root_path}liveSearch/forum/0/0"),
 			));
@@ -149,17 +149,17 @@ class listener implements EventSubscriberInterface
 		{
 			if (!($row['lang_iso'] == 'en' && !$this->is_english_show))
 			{
-			  $this->template->assign_block_vars('langs', array (
-			 'LANG_ID'		=> $row['lang_id'],
-			 'LANG_ISO'		=> $row['lang_iso'],
-			 'LANG_LOCAL_NAME'		=> censor_text($row['lang_local_name']),
-			));
+				$this->template->assign_block_vars('langs', array (
+				'LANG_ID'		=> $row['lang_id'],
+				'LANG_ISO'		=> $row['lang_iso'],
+				'LANG_LOCAL_NAME'		=> censor_text($row['lang_local_name']),
+				));
 			}
 		}
 		//todo
 		if ($this->error == listener::QUICK_LANG_NO)
 		{
-			 trigger_error(sprintf($this->user->lang['QUICK_LANG_NO'], $this->new_lang) );
+			trigger_error(sprintf($this->user->lang['QUICK_LANG_NO'], $this->new_lang) );
 			// trigger_error(sprintf($user->lang['QUICK_LANG_NO'], $this->new_lang) . $url_back);
 		}
 
@@ -170,7 +170,7 @@ class listener implements EventSubscriberInterface
 		return $this->request->variable($name, $default, false, 3);
 	}
 
-	 private function set_back_url()
+	private function set_back_url()
 	{
 		$page = $this->user->page;
 		if ($page['page_name'] == 'viewforum.php' || $page['page_name'] == 'index.php' ||$page['page_name'] == 'search.php' )
@@ -179,8 +179,8 @@ class listener implements EventSubscriberInterface
 		}
 		if ($page['page_name'] == 'viewtopic.php')
 		{
-			 $url =  str_replace('&amp;', '&', $this->user->page['page']);
-			 return str_replace('amp%3B', '', $url);
+			$url =  str_replace('&amp;', '&', $this->user->page['page']);
+			return str_replace('amp%3B', '', $url);
 		}
 		// Remove 'app.php/' from the page, when rewrite is enabled
 		if ($this->config['enable_mod_rewrite'] && strpos($page['page_name'] , 'app.' . $this->php_ext . '/') === 0)
@@ -189,15 +189,15 @@ class listener implements EventSubscriberInterface
 		}
 		return str_replace('&amp;', '&', $this->user->page['page']);
 	}
-	 private function get_iso($l)
-	 {
+	private function get_iso($l)
+	{
 		foreach ($this->lang_info as $lang)
 		{
 			if ($lang['lang_iso'] == $l)
 			{
-				 return $lang['lang_iso'];
+				return $lang['lang_iso'];
 			}
 		}
 			return '';
-	 }
+	}
 }
