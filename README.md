@@ -38,7 +38,7 @@ Extension for phpBB 3.1 to let visitors quickly switch board language.
 ### License
 [GNU General Public License v2](http://opensource.org/licenses/GPL-2.0)
 
- P.S. Icon for each language must  be picture 16X16 pixels with ext ".png" anв located in /ext/quicklanguage/styles/all/theme/images
+ P.S. Icon for each language must  be picture 16X16 pixels with ext ".png" anв located in the /ext/alg5/quicklanguage/styles/all/theme/images/flags
 Icons of flags can be downloaded from www.gosquared.com/download/pixels/flags.zip
 
 © 2014 - Alg
