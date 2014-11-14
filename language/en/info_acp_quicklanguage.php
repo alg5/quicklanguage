@@ -38,7 +38,7 @@ $lang = array_merge($lang, array(
 	'ACP_QUICK_LANGUAGE_SETTINGS'				=> 'Установки',
 	'ACP_QUICK_LANGUAGE_SETTINGS_COMMON'				=> 'Общие установки',
 	'ACP_QUICK_LANGUAGE_SETTINGS_SHOW'				=> 'Установки отображения',
-    
+
 	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW'			=> 'Показывать английский язык',
 	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW_EXPLAIN'	=> 'По умолчанию иконка переключения на английский будет доступна для выбора. <br />Для неанглоязычных форумов рекомендуется отключать эту опцию',
 	'ACP_QUICK_LANGUAGE_ALLOW_GUESTS'			=> 'Разрешить гостям смену языка',

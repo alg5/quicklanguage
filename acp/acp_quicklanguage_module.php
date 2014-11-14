@@ -25,7 +25,7 @@ class acp_quicklanguage_module
 		$user->add_lang('acp/common');
 		$this->tpl_name = 'acp_quicklanguage';
 		$this->page_title = $user->lang('ACP_QUICK_LANGUAGE');
-		
+
 		$submit = (isset($_POST['submit'])) ? true : false;
 		$form_key = 'quicklanguage';
 		add_form_key($form_key);
@@ -51,7 +51,7 @@ class acp_quicklanguage_module
 		$this->new_config = $config;
 		$cfg_array = (isset($_REQUEST['config'])) ? utf8_normalize_nfc($request->variable('config', array('' => ''), true)) : $this->new_config;
 		$error = array();
-		 
+
 		// We validate the complete config if wished
 		validate_config_vars($display_vars['vars'], $cfg_array, $error);
 
