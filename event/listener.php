@@ -39,7 +39,7 @@ class listener implements EventSubscriberInterface
 	{
 		return array(
 			'core.user_setup'			=> 'user_setup',
-			'core.page_header_after'			=> 'page_header_after',
+			'core.page_header_after'=> 'page_header_after',
 		);
 	}
 
@@ -47,7 +47,7 @@ class listener implements EventSubscriberInterface
 	{
 		$this->quick_language_enable = false;
 
-		//get all installed language
+		//get all installed languages
 		$sql = "SELECT * FROM " . LANG_TABLE;
 		$result = $this->db->sql_query($sql);
 		$counter = 0;
@@ -91,7 +91,8 @@ class listener implements EventSubscriberInterface
 		//validate user data
 		$res = $this->get_iso($new_lang);
 		$this->new_lang = $new_lang;
-
+//$res = ''; //debug
+//$res = 'en'; //debug
 		if ($res == '')
 		{
 			$this->error = listener::QUICK_LANG_NO;
@@ -153,14 +154,21 @@ class listener implements EventSubscriberInterface
 				'LANG_ID'		=> $row['lang_id'],
 				'LANG_ISO'		=> $row['lang_iso'],
 				'LANG_LOCAL_NAME'		=> censor_text($row['lang_local_name']),
+				'S_SELECTED_LANG'	=>	$this->current_lang == $row['lang_iso'],
 				));
 			}
 		}
 		//todo
+        $redirect = append_sid("{$this->root_path}" . $url_back, "");
+
 		if ($this->error == listener::QUICK_LANG_NO)
 		{
-			trigger_error(sprintf($this->user->lang['QUICK_LANG_NO'], $this->new_lang) );
-			// trigger_error(sprintf($user->lang['QUICK_LANG_NO'], $this->new_lang) . $url_back);
+			meta_refresh (5, $url_back);
+			trigger_error(sprintf($this->user->lang['QUICK_LANG_NO'], $this->new_lang) . '<br /><br /><a href="'. $redirect .  '">' .  $this->user->lang['BACK_TO_PREV'] . '</a>');
+		}
+		if ($this->error == listener::QUICK_LANG_EN_DISABLE)
+		{
+			meta_refresh (5, $url_back);
 		}
 
 	}
@@ -185,7 +193,7 @@ class listener implements EventSubscriberInterface
 		// Remove 'app.php/' from the page, when rewrite is enabled
 		if ($this->config['enable_mod_rewrite'] && strpos($page['page_name'] , 'app.' . $this->php_ext . '/') === 0)
 		{
-			return  str_replace('app.' . $php_ext . '/', '', $this->user->page['page']);
+			return  str_replace('app.' . $this->php_ext . '/', '', $this->user->page['page']);
 		}
 		return str_replace('&amp;', '&', $this->user->page['page']);
 	}

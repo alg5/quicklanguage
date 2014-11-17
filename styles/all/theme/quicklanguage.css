@@ -1,17 +1,19 @@
-.lang {
-	  cursor: pointer;
-  float: right;
-  height: 16px;
-  width: 16px;
-  display:inline-block;
+.lang 
+{
+    cursor: pointer;
+    float: right;
+    height: 16px;
+    width: 16px;
+    display:inline-block;
+    opacity:0.5;
+    filter:alpha(opacity=50);
 }
-.lang_en {
-  background: url("./images/flags/en.png") no-repeat;
-
+.lang_selected 
+{
+	cursor: default;
 }
-.lang_ru {
-  background: url("./images/flags/ru.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-}
-.lang_uk {
-  background: url("./images/flags/uk.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+.lang:hover 
+{
+    opacity:1.0;
+    filter:alpha(opacity=100); 
 }
