@@ -159,7 +159,7 @@ class listener implements EventSubscriberInterface
 			}
 		}
 		//todo
-        $redirect = append_sid("{$this->root_path}" . $url_back, "");
+		$redirect = append_sid("{$this->root_path}" . $url_back, "");
 
 		if ($this->error == listener::QUICK_LANG_NO)
 		{
