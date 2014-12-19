@@ -13,10 +13,10 @@ namespace alg\quicklanguage\event;
 /**
  * @ignore
  */
-if (!defined('IN_PHPBB'))
-{
-	exit;
-}
+//if (!defined('IN_PHPBB'))
+//{
+//	exit;
+//}
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
