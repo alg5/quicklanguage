@@ -204,34 +204,34 @@ class listener implements EventSubscriberInterface
 		}
 
 	}
-	 
-	 public function display_forums_modify_template_vars($event)
+
+	public function display_forums_modify_template_vars($event)
 	{
 		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
 		$forum_row = $event['forum_row'];
-		  if (isset($this->user->lang['FORUM_NAME_' . $forum_row['FORUM_ID']]))
-		  {
-				$forum_row['FORUM_NAME'] = $this->user->lang['FORUM_NAME_' . $forum_row['FORUM_ID']];
-		  }
-		  if (isset($this->user->lang['FORUM_DESC' . $forum_row['FORUM_ID']]))
-		  {
-				$forum_row['FORUM_DESC'] = $this->user->lang['FORUM_DESC' . $forum_row['FORUM_ID']];
-		  }
-		  $event['forum_row'] = $forum_row;
-}
-	
-	 public function display_forums_modify_category_template_vars($event)
+		if (isset($this->user->lang['FORUM_NAME_' . $forum_row['FORUM_ID']]))
+		{
+			$forum_row['FORUM_NAME'] = $this->user->lang['FORUM_NAME_' . $forum_row['FORUM_ID']];
+		}
+		if (isset($this->user->lang['FORUM_DESC' . $forum_row['FORUM_ID']]))
+		{
+			$forum_row['FORUM_DESC'] = $this->user->lang['FORUM_DESC' . $forum_row['FORUM_ID']];
+		}
+		$event['forum_row'] = $forum_row;
+	}
+
+	public function display_forums_modify_category_template_vars($event)
 	{
 		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
 		$cat_row = $event['cat_row'];
-		  if (isset($this->user->lang['FORUM_NAME_' . $cat_row['FORUM_ID']]))
-		  {
-				$cat_row['FORUM_NAME'] = $this->user->lang['FORUM_NAME_' . $cat_row['FORUM_ID']];
-		  }
-		  if (isset($this->user->lang['FORUM_DESC' . $cat_row['FORUM_ID']]))
-		  {
-				$cat_row['FORUM_DESC'] = $this->user->lang['FORUM_NAME_' . $cat_row['FORUM_ID']];
-		  }
+		if (isset($this->user->lang['FORUM_NAME_' . $cat_row['FORUM_ID']]))
+		{
+			$cat_row['FORUM_NAME'] = $this->user->lang['FORUM_NAME_' . $cat_row['FORUM_ID']];
+		}
+		if (isset($this->user->lang['FORUM_DESC' . $cat_row['FORUM_ID']]))
+		{
+			$cat_row['FORUM_DESC'] = $this->user->lang['FORUM_NAME_' . $cat_row['FORUM_ID']];
+		}
 		$event['cat_row'] = $cat_row;
 }
 
@@ -241,7 +241,7 @@ class listener implements EventSubscriberInterface
 		return $this->request->variable($name, $default, false, 3);
 	}
 
-	 private function get_iso($l)
+	private function get_iso($l)
 	{
 		foreach ($this->lang_info as $lang)
 		{
