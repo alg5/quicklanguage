@@ -3,8 +3,8 @@
     "type": "phpbb-extension",
     "description": "Adds a style dropdown box to the header of every page for quickly switching between boarg languages. Based on the original Prime Quick Style by primehalo.",
     "homepage": "https://github.com/PayBas/QuickStyle",
-    "version": "1.0.0",
-    "time": "2014-10-13",
+    "version": "1.0.1",
+    "time": "2014-12-19",
     "license": "GPL-2.0",
     "authors": [
         {

@@ -33,14 +33,14 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'ACP_QUICK_LANGUAGE'						=> 'Быстрая смена языка',
-	'ACP_QUICK_LANGUAGE_EXPLAIN'				=> 'Добавление возможности выбора языка с каждой страницы',
-	'ACP_QUICK_LANGUAGE_SETTINGS'				=> 'Установки',
-	'ACP_QUICK_LANGUAGE_SETTINGS_COMMON'				=> 'Общие установки',
-	'ACP_QUICK_LANGUAGE_SETTINGS_SHOW'				=> 'Установки отображения',
+	'ACP_QUICK_LANGUAGE'						=> 'Quick Language',
+	'ACP_QUICK_LANGUAGE_EXPLAIN'				=> 'Adds an icons(flags) to the header of every page for quickly switching between languages',
+	'ACP_QUICK_LANGUAGE_SETTINGS'				=> 'Setting',
+	'ACP_QUICK_LANGUAGE_SETTINGS_COMMON'				=> 'Common Setting',
+	'ACP_QUICK_LANGUAGE_SETTINGS_SHOW'				=> 'View Setting',
 
-	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW'			=> 'Показывать английский язык',
-	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW_EXPLAIN'	=> 'По умолчанию иконка переключения на английский будет доступна для выбора. <br />Для неанглоязычных форумов рекомендуется отключать эту опцию',
-	'ACP_QUICK_LANGUAGE_ALLOW_GUESTS'			=> 'Разрешить гостям смену языка',
-	'ACP_QUICK_LANGUAGE_ALLOW_GUESTS_EXPLAIN'	=> 'По умолчанию гости могут менять язык конференции. Выбор гостя будет запоминаться в локальной памяти браузера (не поддерживается браузером ИЕ версии 8 и ниже',
+	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW'			=> 'Show Englich',
+	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW_EXPLAIN'	=> 'By default icon for English will be displayed <br />For non-English speaking forums recommended to set off this setting',
+	'ACP_QUICK_LANGUAGE_ALLOW_GUESTS'			=> 'Allow guests to change languages',
+	'ACP_QUICK_LANGUAGE_ALLOW_GUESTS_EXPLAIN'	=> 'This setting will allow guest visitors to change languages as well. Since they are not logged-in, a cookie will be used to remember their selected language.',
 ));

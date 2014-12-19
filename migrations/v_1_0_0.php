@@ -30,9 +30,9 @@ class v_1_0_0 extends \phpbb\db\migration\migration
 	public function update_data()
 	{
 		return array(
-			array('config.add', array('quicklanguage_version', '1.0.0')),
-			array('config.add', array('quick_language_allow_guests', '1')),
-			array('config.add', array('quick_language_is_english_show', '1')),
+			array('config.add', array('quicklanguage_version', '1.0.1')),
+			array('config.add', array('quicklanguage_allow_guests', '1')),
+			array('config.add', array('quicklanguage_is_english_show', '1')),
 
 			// Add ACP modules
 			array('module.add', array('acp', 'ACP_CAT_DOT_MODS', 'ACP_QUICK_LANGUAGE')),
@@ -50,8 +50,8 @@ class v_1_0_0 extends \phpbb\db\migration\migration
 	{
 		return array(
 			// remove from configs
-				array('config.remove', array('quick_language_allow_guests')),
-				array('config.remove', array('quick_language_is_english_show')),
+				array('config.remove', array('quicklanguage_allow_guests')),
+				array('config.remove', array('quicklanguage_is_english_show')),
 			// Current version
 				array('config.remove', array('quicklanguage_version')),
 

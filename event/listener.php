@@ -10,6 +10,14 @@
 
 namespace alg\quicklanguage\event;
 
+/**
+ * @ignore
+ */
+if (!defined('IN_PHPBB'))
+{
+	exit;
+}
+
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
@@ -18,6 +26,31 @@ class listener implements EventSubscriberInterface
 	const OK= 0;
 	const QUICK_LANG_NO = 1;
 	const QUICK_LANG_EN_DISABLE = 2;
+
+	/** @var \phpbb\config\config */
+	protected $config;
+
+	/** @var \phpbb\db\driver\driver_interface */
+	protected $db;
+
+	/** @var \phpbb\request\request_interface */
+	protected $request;
+
+	/** @var \phpbb\template\template */
+	protected $template;
+
+	/** @var \phpbb\user */
+	protected $user;
+
+	/** @var string phpBB root path */
+	protected $root_path;
+
+	/** @var string PHP extension */
+	protected $php_ext;
+
+	protected $allow_guests;
+	protected $is_english_show;
+	protected $error;
 
 	public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\request\request_interface $request, \phpbb\template\template $template, \phpbb\user $user, $root_path, $php_ext)
 	{
@@ -29,9 +62,9 @@ class listener implements EventSubscriberInterface
 		$this->root_path = $root_path;
 		$this->php_ext = $php_ext;
 
-		// Setup the common settings
-		$this->allow_guests = isset($config['quick_language_allow_guests']) ? (bool) $config['quick_language_allow_guests'] : true;
-		$this->is_english_show = isset($config['quick_language_is_english_show']) ? (bool) $config['quick_language_is_english_show'] : true;
+		//Setup the common settings
+		$this->allow_guests = isset($config['quicklanguage_allow_guests']) ? (bool) $config['quicklanguage_allow_guests'] : true;
+		$this->is_english_show = isset($config['quicklanguage_is_english_show']) ? (bool) $config['quicklanguage_is_english_show'] : true;
 		$this->error = listener::OK;
 	}
 
@@ -40,6 +73,8 @@ class listener implements EventSubscriberInterface
 		return array(
 			'core.user_setup'			=> 'user_setup',
 			'core.page_header_after'=> 'page_header_after',
+			'core.display_forums_modify_template_vars'		=> 'display_forums_modify_template_vars',
+			'core.display_forums_modify_category_template_vars'		=> 'display_forums_modify_category_template_vars',
 		);
 	}
 
@@ -91,8 +126,6 @@ class listener implements EventSubscriberInterface
 		//validate user data
 		$res = $this->get_iso($new_lang);
 		$this->new_lang = $new_lang;
-//$res = ''; //debug
-//$res = 'en'; //debug
 		if ($res == '')
 		{
 			$this->error = listener::QUICK_LANG_NO;
@@ -137,13 +170,12 @@ class listener implements EventSubscriberInterface
 			return;
 		}
 		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
-		$url_back = $this->set_back_url();
+		$url_back = build_url();
 
 		$this->template->assign_vars(array(
 			'U_QUICK_LANG_ACTION'	=>  $url_back,
 			'S_QUICK_LANGUAGE_ENABLE'	=> (bool) $this->quick_language_enable,
 			'S_CURRENT_LANG'	=>	$this->current_lang,
-			//'U_FORUM_LS_PATH'				  => append_sid("{$this->phpbb_root_path}liveSearch/forum/0/0"),
 			));
 
 		foreach ($this->lang_info as $row)
@@ -172,32 +204,44 @@ class listener implements EventSubscriberInterface
 		}
 
 	}
+	 
+	 public function display_forums_modify_template_vars($event)
+	{
+		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
+		$forum_row = $event['forum_row'];
+		  if (isset($this->user->lang['FORUM_NAME_' . $forum_row['FORUM_ID']]))
+		  {
+				$forum_row['FORUM_NAME'] = $this->user->lang['FORUM_NAME_' . $forum_row['FORUM_ID']];
+		  }
+		  if (isset($this->user->lang['FORUM_DESC' . $forum_row['FORUM_ID']]))
+		  {
+				$forum_row['FORUM_DESC'] = $this->user->lang['FORUM_DESC' . $forum_row['FORUM_ID']];
+		  }
+		  $event['forum_row'] = $forum_row;
+}
+	
+	 public function display_forums_modify_category_template_vars($event)
+	{
+		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
+		$cat_row = $event['cat_row'];
+		  if (isset($this->user->lang['FORUM_NAME_' . $cat_row['FORUM_ID']]))
+		  {
+				$cat_row['FORUM_NAME'] = $this->user->lang['FORUM_NAME_' . $cat_row['FORUM_ID']];
+		  }
+		  if (isset($this->user->lang['FORUM_DESC' . $cat_row['FORUM_ID']]))
+		  {
+				$cat_row['FORUM_DESC'] = $this->user->lang['FORUM_NAME_' . $cat_row['FORUM_ID']];
+		  }
+		$event['cat_row'] = $cat_row;
+}
+
 	public function request_cookie($name, $default = null)
 	{
 		$name = $this->config['cookie_name'] . '_' . $name;
 		return $this->request->variable($name, $default, false, 3);
 	}
 
-	private function set_back_url()
-	{
-		$page = $this->user->page;
-		if ($page['page_name'] == 'viewforum.php' || $page['page_name'] == 'index.php' ||$page['page_name'] == 'search.php' )
-		{
-			return str_replace('&amp;', '&', $this->user->page['page']);
-		}
-		if ($page['page_name'] == 'viewtopic.php')
-		{
-			$url =  str_replace('&amp;', '&', $this->user->page['page']);
-			return str_replace('amp%3B', '', $url);
-		}
-		// Remove 'app.php/' from the page, when rewrite is enabled
-		if ($this->config['enable_mod_rewrite'] && strpos($page['page_name'] , 'app.' . $this->php_ext . '/') === 0)
-		{
-			return  str_replace('app.' . $this->php_ext . '/', '', $this->user->page['page']);
-		}
-		return str_replace('&amp;', '&', $this->user->page['page']);
-	}
-	private function get_iso($l)
+	 private function get_iso($l)
 	{
 		foreach ($this->lang_info as $lang)
 		{

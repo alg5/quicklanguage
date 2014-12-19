@@ -1,14 +1,16 @@
 <?php
-
-/**
+/** 
 *
-* @package quicklanguage [English]
-* @copyright (c) 2014 Alg
-* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
+* quicklanguage [English]
+*
+* @package quicklanguage
+* @copyright (c) 2014 alg
+* @license http://opensource.org/licenses/gpl-license.php GNU Public License 
+*
 */
 
 /**
-* DO NOT CHANGE
+* @ignore
 */
 if (!defined('IN_PHPBB'))
 {
@@ -33,6 +35,10 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'QUICK_LANG_NO'	=> 'Языковой пакет ISO =%s не установлен',
-	'QUICK_LANG_EN_DISABLE'	=> 'Быстрая смена на английский язык запрещена администратором. Вы можете сменить язык через личный раздел',
+	'QUICK_LANG_NO'	=> 'Language Pack ISO =%s not installed',
+	'QUICK_LANG_EN_DISABLE'	=> 'Quick switch on English blocked by administrator. You can do this action in the UCP ',
+	'FORUM_NAME_1'	=> 'Chugunok',
+	'FORUM_NAME_8'	=> 'Hyde Park',
+	'FORUM_NAME_29'	=> '13-th sector',
+	'FORUM_DESC_8'	=> 'Uncensored questions',
 ));

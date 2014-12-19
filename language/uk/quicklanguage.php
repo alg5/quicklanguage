@@ -1,15 +1,16 @@
 <?php
-
-/* quicklanguage [Russian]
+/** 
 *
-* @package quicklanguage
+* liveSearch [Russian]
+*
+* @package liveSearch
 * @copyright (c) 2014 alg
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @license http://opensource.org/licenses/gpl-license.php GNU Public License 
 *
 */
 
 /**
-* DO NOT CHANGE
+* @ignore
 */
 if (!defined('IN_PHPBB'))
 {
@@ -34,6 +35,7 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'QUICK_LANG_NO'	=> 'мовний пакет ISO =%s не встановлений',
-	'QUICK_LANG_EN_DISABLE'	=> 'швидка зміна на англійську мову заборонена адміністратором. ви можете змінити мову через особистий розділ.',
+	'QUICK_LANG_NO'			=> 'РјРѕРІРЅРёР№ РїР°РєРµС‚ ISO =%s РЅРµ РІСЃС‚Р°РЅРѕРІР»РµРЅРёР№',
+	'QUICK_LANG_EN_DISABLE'		=> 'ВС€РІРёРґРєР° Р·РјС–РЅР° РЅР° Р°РЅРіР»С–Р№СЃСЊРєСѓ РјРѕРІСѓ Р·Р°Р±РѕСЂРѕРЅРµРЅР° Р°РґРјС–РЅС–СЃС‚СЂР°С‚РѕСЂРѕРј. РІРё РјРѕР¶РµС‚Рµ Р·РјС–РЅРёС‚Рё РјРѕРІСѓ С‡РµСЂРµР· РѕСЃРѕР±РёСЃС‚РёР№ СЂРѕР·РґС–Р».',
+	'FORUM_NAME_1'	=> 'Р§Р°РІСѓРЅРѕРє',
 ));

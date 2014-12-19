@@ -2,7 +2,7 @@
 
 /**
 *
-* @package Quick Language
+* @package quicklanguage
 * @copyright (c) 2014 Alg
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 
@@ -38,10 +38,8 @@ class acp_quicklanguage_module
 				'title'	=> 'ACP_QUICKREPLY',
 				'vars'	=> array(
 					'legend1'			=> '',
-					'quick_language_allow_guests'				=> array('lang' => 'ACP_QUICK_LANGUAGE_ALLOW_GUESTS', 'validate' => 'bool', 'type' => 'radio:yes_no', 'explain' => true),
-					'quick_language_is_english_show'			=> array('lang' => 'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW', 'validate' => 'bool', 'type' => 'radio:yes_no', 'explain' => true),
-
-					//	 'legend2'					=> 'ACP_SUBMIT_CHANGES',
+					'quicklanguage_allow_guests'				=> array('lang' => 'ACP_QUICK_LANGUAGE_ALLOW_GUESTS', 'validate' => 'bool', 'type' => 'radio:yes_no', 'explain' => true),
+					'quicklanguage_is_english_show'			=> array('lang' => 'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW', 'validate' => 'bool', 'type' => 'radio:yes_no', 'explain' => true),
 					),
 				);
 		if (isset($display_vars['lang']))

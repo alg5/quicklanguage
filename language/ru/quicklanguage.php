@@ -1,15 +1,16 @@
 <?php
-
-/* quicklanguage [Russian]
+/** 
+*
+* quicklanguage [Russian]
 *
 * @package quicklanguage
 * @copyright (c) 2014 alg
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+* @license http://opensource.org/licenses/gpl-license.php GNU Public License 
 *
 */
 
 /**
-* DO NOT CHANGE
+* @ignore
 */
 if (!defined('IN_PHPBB'))
 {
@@ -34,6 +35,9 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'QUICK_LANG_NO'	=> 'Языковой пакет ISO =%s не установлен',
-	'QUICK_LANG_EN_DISABLE'	=> 'Быстрая смена на английский язык запрещена администратором. Вы можете сменить язык через личный раздел',
+	'QUICK_LANG_NO'	=> 'РЇР·С‹РєРѕРІРѕР№ РїР°РєРµС‚ ISO =%s РЅРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅ',
+	'QUICK_LANG_EN_DISABLE'	=> 'Р‘С‹СЃС‚СЂР°СЏ СЃРјРµРЅР° РЅР° Р°РЅРіР»РёР№СЃРєРёР№ СЏР·С‹Рє Р·Р°РїСЂРµС‰РµРЅР° Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРѕРј. Р’С‹ РјРѕР¶РµС‚Рµ СЃРјРµРЅРёС‚СЊ СЏР·С‹Рє С‡РµСЂРµР· Р»РёС‡РЅС‹Р№ СЂР°Р·РґРµР»',
+    //'FORUM_NAME_1'	=> 'Р§СѓР“СѓРЅРѕРљ12345',
+	'FORUM_NAME_8'	=> 'Р“Р°Р№Рґ-РїР°СЂРє12345',
+	'FORUM_DESC_8'	=> 'РќРµ С†РµРЅР·СѓСЂРЅС‹Рµ РІРѕРїСЂРѕСЃС‹12345',
 ));
