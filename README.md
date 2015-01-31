@@ -6,7 +6,7 @@ Extension for phpBB 3.1 to let visitors quickly switch board language.
 
 
 ## Features
-- Adds an icons for each installed language to the header, which detects a selection change and triggers a board language change as through the UCP.
+- Adds an icons for each installed language to the header, detects a selection change and triggers a board language change as through the UCP.
 - Automatically redirects back to the original page being viewed after style has changed.
 - Works for guests too, but uses a special cookie instead.
 - ACP module to set guest access and show icon for English`
@@ -19,6 +19,7 @@ Extension for phpBB 3.1 to let visitors quickly switch board language.
 - English
 - Russian
 - Ukrainian
+- Deutsch
 
 #### To do list
 -  responsive layout.
@@ -38,7 +39,7 @@ Extension for phpBB 3.1 to let visitors quickly switch board language.
 ### License
 [GNU General Public License v2](http://opensource.org/licenses/GPL-2.0)
 
- P.S. Icon for each language must  be picture 16X16 pixels with ext ".png" anв located in the /ext/alg5/quicklanguage/styles/all/theme/images/flags
+ P.S. Icon for each language must  be picture 16X16 pixels with ext ".png" and located in the /ext/alg5/quicklanguage/styles/all/theme/images/flags
 Icons of flags can be downloaded from www.gosquared.com/download/pixels/flags.zip
 
 © 2014 - Alg
