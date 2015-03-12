@@ -37,8 +37,4 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'QUICK_LANG_NO'	=> 'Language Pack ISO =%s not installed',
 	'QUICK_LANG_EN_DISABLE'	=> 'Quick switch on English blocked by administrator. You can do this action in the UCP ',
-	'FORUM_NAME_1'	=> 'Chugunok',
-	'FORUM_NAME_8'	=> 'Hyde Park',
-	'FORUM_NAME_29'	=> '13-th sector',
-	'FORUM_DESC_8'	=> 'Uncensored questions',
 ));
