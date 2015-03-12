@@ -39,9 +39,9 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_QUICK_LANGUAGE'						=> 'Langue rapide',
 	'ACP_QUICK_LANGUAGE_EXPLAIN'				=> 'Permet de changer de langue en affichant des icônes (drapeaux) dans le haut de chaque page.',
-	'ACP_QUICK_LANGUAGE_SETTINGS'				=> 'Paramètre',
-	'ACP_QUICK_LANGUAGE_SETTINGS_COMMON'				=> 'Paramètre commun',
-	'ACP_QUICK_LANGUAGE_SETTINGS_SHOW'				=> 'Voir le paramètre',
+	'ACP_QUICK_LANGUAGE_SETTINGS'				=> 'Paramètres',
+	'ACP_QUICK_LANGUAGE_SETTINGS_COMMON'				=> 'Paramètre communs',
+	'ACP_QUICK_LANGUAGE_SETTINGS_SHOW'				=> 'Voir le paramètres',
 
 	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW'			=> 'Afficher l’anglais',
 	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW_EXPLAIN'	=> 'Par défaut une icône pour l’anglais sera affichée. <br />Pour les forums qui ne pratiquent pas l’anglais il est recommandé de désactiver cette option.',
