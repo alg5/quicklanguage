@@ -1,7 +1,8 @@
 <?php
 /** 
 *
-* quicklanguage [English]
+* quicklanguage [French]
+* French translation by Galixte (http://www.galixte.com)
 *
 * @package quicklanguage
 * @copyright (c) 2014 alg
@@ -35,6 +36,6 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'QUICK_LANG_NO'	=> 'Language Pack ISO =%s not installed',
-	'QUICK_LANG_EN_DISABLE'	=> 'Quick switch on English blocked by administrator. You can do this action in the UCP ',
+	'QUICK_LANG_NO'	=> 'La langue ISO =%s n’est pas installée',
+	'QUICK_LANG_EN_DISABLE'	=> 'Le changement rapide de langue pour l’anglais est bloqué par l’administrateur. Vous pouvez réaliser cette action dans le panneau d’administration',
 ));
