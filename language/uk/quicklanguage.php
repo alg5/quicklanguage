@@ -37,5 +37,4 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'QUICK_LANG_NO'			=> 'мовний пакет ISO =%s не встановлений',
 	'QUICK_LANG_EN_DISABLE'		=> 'швидка зміна на англійську мову заборонена адміністратором. ви можете змінити мову через особистий розділ.',
-	'FORUM_NAME_1'	=> 'Чавунок',
 ));
