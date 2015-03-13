@@ -16,10 +16,11 @@ Extension for phpBB 3.1 to let visitors quickly switch board language.
 - PHP 5.3.3 or higher
 
 #### Languages supported
+- Deutsch
 - English
+- French
 - Russian
 - Ukrainian
-- Deutsch
 
 #### To do list
 -  responsive layout.
