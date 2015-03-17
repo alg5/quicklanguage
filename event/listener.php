@@ -75,6 +75,7 @@ class listener implements EventSubscriberInterface
 			'core.page_header_after'=> 'page_header_after',
 			'core.display_forums_modify_template_vars'		=> 'display_forums_modify_template_vars',
 			'core.display_forums_modify_category_template_vars'		=> 'display_forums_modify_category_template_vars',
+			'core.viewforum_get_topic_data'=> 'viewforum_get_topic_data',
 		);
 	}
 
@@ -234,6 +235,26 @@ class listener implements EventSubscriberInterface
 		}
 		$event['cat_row'] = $cat_row;
 }
+
+	 public function viewforum_get_topic_data($event)
+	 {
+		$forum_data = $event['forum_data'];
+		$forum_name = $forum_data['forum_name'];
+		$forum_desc = $forum_data['forum_desc'];
+		$forum_id = $forum_data['forum_id'];
+		if (isset($this->user->lang['FORUM_NAME_' .  $forum_data['forum_id']]))
+		{
+			 $forum_name = $this->user->lang['FORUM_NAME_' . $forum_id];
+		}
+		if (isset($this->user->lang['FORUM_DESC' . $forum_id]))
+		{
+			$forum_desc = $this->user->lang['FORUM_DESC_' .$forum_id];
+		}
+		$this->template->assign_vars(array(
+					'FORUM_NAME'	=> $forum_name,
+					'FORUM_DESC'	=> $forum_desc,
+				));
+	 }
 
 	public function request_cookie($name, $default = null)
 	{
