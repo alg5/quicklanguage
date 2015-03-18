@@ -236,15 +236,15 @@ class listener implements EventSubscriberInterface
 		$event['cat_row'] = $cat_row;
 }
 
-	 public function viewforum_get_topic_data($event)
-	 {
+	public function viewforum_get_topic_data($event)
+	{
 		$forum_data = $event['forum_data'];
 		$forum_name = $forum_data['forum_name'];
 		$forum_desc = $forum_data['forum_desc'];
 		$forum_id = $forum_data['forum_id'];
 		if (isset($this->user->lang['FORUM_NAME_' .  $forum_data['forum_id']]))
 		{
-			 $forum_name = $this->user->lang['FORUM_NAME_' . $forum_id];
+			$forum_name = $this->user->lang['FORUM_NAME_' . $forum_id];
 		}
 		if (isset($this->user->lang['FORUM_DESC' . $forum_id]))
 		{
@@ -254,7 +254,7 @@ class listener implements EventSubscriberInterface
 					'FORUM_NAME'	=> $forum_name,
 					'FORUM_DESC'	=> $forum_desc,
 				));
-	 }
+	}
 
 	public function request_cookie($name, $default = null)
 	{

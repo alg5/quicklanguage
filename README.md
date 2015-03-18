@@ -14,8 +14,8 @@ Extension for phpBB 3.1 to let visitors quickly switch board language.
 ##Hidden features ("Easter Egg")
 Admin, for those names of categories / forums that he wants to see in different languages, adds to its language file follow lines
 
-FORUM_NAME_N, где N - ID of the forum/category
-FORUM_DESC_N, где N - ID of the forum/category
+FORUM_NAME_N, where N - ID of the forum/category
+FORUM_DESC_N, where N - ID of the forum/category
 
 Extension checks if the appropriate language variable, if there is, it will display as the title, if not, the name will remain the standard, as was recorded in the database (the same applies to the description of the forum / category)
 
@@ -29,6 +29,7 @@ Extension checks if the appropriate language variable, if there is, it will disp
 - Deutsch
 - English
 - French
+- Hebrew
 - Russian
 - Ukrainian
 
@@ -79,6 +80,7 @@ FORUM_DESC_N, где N - айди форума/категории
 
 #### Поддерживаемые языки
 - Английский
+- Иврит
 - Китайский
 - Немецкий
 - Русский
