@@ -22,6 +22,22 @@
 
 	<!-- ENDIF -->
 <!-- END options -->
+   <input type="checkbox" id= "quicklanguage_is_link_translate_show" name="quicklanguage_is_link_translate_show"  class="radio" {CHECKED_LNK_TRANSLATE} title='' /><b>{L_ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW}</b><br /><span>{L_ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW_EXPLAIN}</span>
+   <br /><span style='color:Red';>{L_ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW_EXPLAIN_1}</span>
+    <div id='setting_lnk_translate'>
+        <fieldset>
+	        <!--<legend>{L_ACP_LIVE_SEARCH_SETTINGS_USERS}</legend>-->
+            <dl>
+		        <dt>
+                    <input type="radio" class="radio"  id='yandex' name='key_options' {CHECKED_YANDEX} value="1" /> API Yandex <span id='key_yandex'><a href='https://tech.yandex.ru/keys/get/?service=trnsl'>{L_ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_GET_KEY}</a></span><br />
+                    <input type="radio" class="radio"    id='bing' name='key_options' {CHECKED_BING} value="2"/> API Bing <span id='key_bing'><a href='https://tech.yandex.ru/keys/get/?service=trnsl'>{L_ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_GET_KEY}</a></span>
+                </dt>
+		        <dd>{L_ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SET_KEY}<br /><input type="text" id='quicklanguage_api_translate_key' name='quicklanguage_api_translate_key' value='{QUICKLANGUAGE_API_TRANSLATE_KEY}' style='width: 600px;' /></dd>
+	        </dl>        
+        
+        </fieldset>
+    </div>   
+
 	<fieldset>
 		<legend>{L_ACP_SUBMIT_CHANGES}</legend>
 		<p class="submit-buttons">

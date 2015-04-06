@@ -37,4 +37,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'QUICK_LANG_NO'	        => 'Sprachpaket ISO =%s nicht installiert',
 	'QUICK_LANG_EN_DISABLE'	=> 'Schnellschalter auf Englisch vom Administrator blockiert. Diese Aktion können Sie in der UCP durchführen',
+	'QUICK_LANG_TRANSLATE_POST'	=> 'Translate',
+	'QUICK_LANG_ORIGINAL_POST'	=> 'Show original text',
 ));

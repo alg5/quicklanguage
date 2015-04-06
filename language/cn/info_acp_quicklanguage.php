@@ -43,4 +43,9 @@ $lang = array_merge($lang, array(
 	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW_EXPLAIN'	=> '默认的图标切换到英语将可供选择。 <br />对于讲英语的论坛建议关闭此选项',
 	'ACP_QUICK_LANGUAGE_ALLOW_GUESTS'			=> '让客人改变语言',
 	'ACP_QUICK_LANGUAGE_ALLOW_GUESTS_EXPLAIN'	=> '默认情况下，客人可以更改会议的语言。客人可以选择将在本地浏览器缓存（不支持您的浏览器IE的版本被记住8及以下',
+	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW'			=> 'Show link "translate"',
+	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW_EXPLAIN'	=> 'If selected, the link will be shown at the bottom of each post.  At the moment translation works only through api yandex, <br /> in the future is expected to add a translation alternatives',
+	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW_EXPLAIN_1'	=> 'Warning! Translation works via external services. To access the service, you must have API-key, the key can be obtained free of charge by clicking the link selected service. If the key is not entered, the link will not be displayed',
+	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_GET_KEY'			=> 'Get the API-ключ"',
+	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SET_KEY'			=> 'Enter the API-ключ',
 ));

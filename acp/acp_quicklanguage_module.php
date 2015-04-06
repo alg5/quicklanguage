@@ -16,6 +16,8 @@ namespace alg\quicklanguage\acp;
 
 class acp_quicklanguage_module
 {
+	const API_YANDEX = 1;
+	const API_BING = 2;
 	public $u_action;
 
 	public function main($id, $mode)
@@ -63,6 +65,7 @@ class acp_quicklanguage_module
 			$submit = false;
 		}
 		// We go through the display_vars to make sure no one is trying to set variables he/she is not allowed to...
+        //for first fieldset
 		foreach ($display_vars['vars'] as $config_name => $null)
 		{
 			if (!isset($cfg_array[$config_name]) || strpos($config_name, 'legend') !== false)
@@ -79,13 +82,28 @@ class acp_quicklanguage_module
 		}
 		if ($submit)
 		{
-			trigger_error($user->lang('CONFIG_UPDATED') . adm_back_link($this->u_action));
+        	$quicklanguage_is_link_translate_show = $request->variable('quicklanguage_is_link_translate_show', false);
+			$config->set('quicklanguage_is_link_translate_show', $quicklanguage_is_link_translate_show);
+            if($quicklanguage_is_link_translate_show)
+            {
+        	    $quicklanguage_translate_api_type = $request->variable('quicklanguage_translate_api_type', acp_quicklanguage_module::API_YANDEX);
+                $config->set('quicklanguage_translate_api_type', $quicklanguage_translate_api_type);
+                
+        	    $quicklanguage_translate_api_type = $request->variable('quicklanguage_api_translate_key', '');
+                $config->set('quicklanguage_translate_api_key', $quicklanguage_translate_api_type);
+            }
+
+            trigger_error($user->lang('CONFIG_UPDATED') . adm_back_link($this->u_action));
 		}
 		$this->page_title = $display_vars['title'];
 
 		$template->assign_vars(array(
 			'L_TITLE'			=> $user->lang[$display_vars['title']],
 			'L_TITLE_EXPLAIN'	=> $user->lang[$display_vars['title'] . '_EXPLAIN'],
+			'CHECKED_LNK_TRANSLATE'	=>  isset($config['quicklanguage_is_link_translate_show']) && $config['quicklanguage_is_link_translate_show'] ? 'checked' : '',
+			'CHECKED_YANDEX'	=>  isset($config['quicklanguage_translate_api_type']) && $config['quicklanguage_translate_api_type']  ==  acp_quicklanguage_module::API_YANDEX ? 'checked' : '',
+			'CHECKED_BING'	=>  isset($config['quicklanguage_translate_api_type']) && $config['quicklanguage_translate_api_type']  ==  acp_quicklanguage_module::API_BING? 'checked' : '',
+			'QUICKLANGUAGE_API_TRANSLATE_KEY'	=>  isset($config['quicklanguage_translate_api_key']) ? $config['quicklanguage_translate_api_key']  : '',
 
 			'S_ERROR'			=> (sizeof($error)) ? true : false,
 			'ERROR_MSG'			=> implode('<br />', $error),

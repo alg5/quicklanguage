@@ -43,4 +43,9 @@ $lang = array_merge($lang, array(
 	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW_EXPLAIN'	=> 'За замовчуванням іконка перемикання на англійську буде доступна. <br /> Для неангломовних форумів рекомендується відключати цю опцію.',
 	'ACP_QUICK_LANGUAGE_ALLOW_GUESTS'				=> 'Дозволити гостям зміну мови',
 	'ACP_QUICK_LANGUAGE_ALLOW_GUESTS_EXPLAIN'		=> 'За замовчуванням гості можуть міняти мову форуму. Вибір гостя буде запам\'ятовуватися в локальній пам\'яті браузера (не підтримується браузером IЕ версії 8 і нижче.',
+	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW'			=> 'Show link "translate"',
+	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW_EXPLAIN'	=> 'If selected, the link will be shown at the bottom of each post.  At the moment translation works only through api yandex, <br /> in the future is expected to add a translation alternatives',
+	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW_EXPLAIN_1'	=> 'Warning! Translation works via external services. To access the service, you must have API-key, the key can be obtained free of charge by clicking the link selected service. If the key is not entered, the link will not be displayed',
+	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_GET_KEY'			=> 'Get the API-ключ"',
+	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SET_KEY'			=> 'Enter the API-ключ',
 ));

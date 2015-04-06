@@ -37,4 +37,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'QUICK_LANG_NO'	=> 'Jazykový balíček ISO =%s nenainstalován',
 	'QUICK_LANG_EN_DISABLE'	=> 'Rychlé přepnutí na Angličtinu zablokováno administrátorem. Tuto akci lze provést v UCP ',
+	'QUICK_LANG_TRANSLATE_POST'	=> 'Translate',
+	'QUICK_LANG_ORIGINAL_POST'	=> 'Show original text',
 ));

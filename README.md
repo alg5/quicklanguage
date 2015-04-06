@@ -2,28 +2,29 @@ quicklanguage
 =============
 [![Build Status](https://travis-ci.org/alg5/quicklanguage.svg?branch=master)](https://travis-ci.org/alg5/quicklanguage)
 
-Extension for phpBB 3.1 to let visitors quickly switch board language.
+Extension for phpBB 3.1 lets visitors switch quickly the board language.
 
 
 ## Features
 - Adds an icons for each installed language to the header, detects a selection change and triggers a board language change as through the UCP.
 - Automatically redirects back to the original page being viewed after language has changed.
 - Works for guests too, but uses a special cookie instead.
-- ACP module to set guest access and show icon for English`
+- ACP module to set guest access and show icon for English.
 
 ##Hidden features ("Easter Egg")
-Admin, for those names of categories / forums that he wants to see in different languages, adds to its language file follow lines
+Admin adds the following lines to appropriate language file for those names of categories/forums that he wants to see in different languages:
 
 FORUM_NAME_N, where N - ID of the forum/category
+<br />
 FORUM_DESC_N, where N - ID of the forum/category
 
-Extension checks if the appropriate language variable, if there is, it will display as the title, if not, the name will remain the standard, as was recorded in the database (the same applies to the description of the forum / category)
+The extension checks if the appropriate language variable exists. if it does, then the variable displays as the title. Otherwise, the title will remain default, as it was stored in the database (same applies to the description of the forum/category).
 
 #### Requirements
 - phpBB 3.1-RC3 or higher
 - PHP 5.3.3 or higher
 
-#### Languages supported
+#### Supported languages 
 - Chinese
 - Сzech
 - Deutsch

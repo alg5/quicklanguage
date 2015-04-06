@@ -37,8 +37,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'QUICK_LANG_NO'	=> '语言包ISO=％s没有安装',
 	'QUICK_LANG_EN_DISABLE'	=> '英语快速开关阻止管理员。你可以在UCP这个动作',
-	'FORUM_NAME_1'	=> 'Chugunok',
-	'FORUM_NAME_8'	=> 'Hyde Park',
-	'FORUM_NAME_29'	=> '13-th sector',
-	'FORUM_DESC_8'	=> 'Uncensored questions',
+	'QUICK_LANG_TRANSLATE_POST'	=> 'Translate',
+	'QUICK_LANG_ORIGINAL_POST'	=> 'Show original text',
 ));

@@ -26,6 +26,8 @@ class listener implements EventSubscriberInterface
 	const OK= 0;
 	const QUICK_LANG_NO = 1;
 	const QUICK_LANG_EN_DISABLE = 2;
+	const API_YANDEX = 1;
+	const API_BING = 2;
 
 	/** @var \phpbb\config\config */
 	protected $config;
@@ -172,11 +174,21 @@ class listener implements EventSubscriberInterface
 		}
 		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
 		$url_back = build_url();
+        $url_translate = '';
+        if (isset($this->config['quicklanguage_is_link_translate_show']) && $this->config['quicklanguage_is_link_translate_show'] >0 && isset($this->config['quicklanguage_translate_api_key']) && $this->config['quicklanguage_translate_api_key'] != '' && isset($this->config['quicklanguage_translate_api_type']))
+        {
+            if ($this->config['quicklanguage_translate_api_type'] ==listener::API_YANDEX)
+            {
+                $url_translate = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=' . $this->config['quicklanguage_translate_api_key'] . '&text=';
+            }
+        }
 
 		$this->template->assign_vars(array(
 			'U_QUICK_LANG_ACTION'	=>  $url_back,
 			'S_QUICK_LANGUAGE_ENABLE'	=> (bool) $this->quick_language_enable,
 			'S_CURRENT_LANG'	=>	$this->current_lang,
+			'U_TRANSLATE_POST'	=>	$url_translate,
+			'S_SHOW_TRANSLATE_POST'	=> (bool)	$url_translate != '',
 			));
 
 		foreach ($this->lang_info as $row)
@@ -214,9 +226,9 @@ class listener implements EventSubscriberInterface
 		{
 			$forum_row['FORUM_NAME'] = $this->user->lang['FORUM_NAME_' . $forum_row['FORUM_ID']];
 		}
-		if (isset($this->user->lang['FORUM_DESC' . $forum_row['FORUM_ID']]))
+		if (isset($this->user->lang['FORUM_DESC_' . $forum_row['FORUM_ID']]))
 		{
-			$forum_row['FORUM_DESC'] = $this->user->lang['FORUM_DESC' . $forum_row['FORUM_ID']];
+			$forum_row['FORUM_DESC'] = $this->user->lang['FORUM_DESC_' . $forum_row['FORUM_ID']];
 		}
 		$event['forum_row'] = $forum_row;
 	}
@@ -229,9 +241,9 @@ class listener implements EventSubscriberInterface
 		{
 			$cat_row['FORUM_NAME'] = $this->user->lang['FORUM_NAME_' . $cat_row['FORUM_ID']];
 		}
-		if (isset($this->user->lang['FORUM_DESC' . $cat_row['FORUM_ID']]))
+		if (isset($this->user->lang['FORUM_DESC_' . $cat_row['FORUM_ID']]))
 		{
-			$cat_row['FORUM_DESC'] = $this->user->lang['FORUM_NAME_' . $cat_row['FORUM_ID']];
+			$cat_row['FORUM_DESC'] = $this->user->lang['FORUM_DESC_' . $cat_row['FORUM_ID']];
 		}
 		$event['cat_row'] = $cat_row;
 }
@@ -246,7 +258,7 @@ class listener implements EventSubscriberInterface
 		{
 			$forum_name = $this->user->lang['FORUM_NAME_' . $forum_id];
 		}
-		if (isset($this->user->lang['FORUM_DESC' . $forum_id]))
+		if (isset($this->user->lang['FORUM_DESC_' . $forum_id]))
 		{
 			$forum_desc = $this->user->lang['FORUM_DESC_' .$forum_id];
 		}
