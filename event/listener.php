@@ -174,21 +174,21 @@ class listener implements EventSubscriberInterface
 		}
 		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
 		$url_back = build_url();
-        $url_translate = '';
-        if (isset($this->config['quicklanguage_is_link_translate_show']) && $this->config['quicklanguage_is_link_translate_show'] >0 && isset($this->config['quicklanguage_translate_api_key']) && $this->config['quicklanguage_translate_api_key'] != '' && isset($this->config['quicklanguage_translate_api_type']))
-        {
-            if ($this->config['quicklanguage_translate_api_type'] ==listener::API_YANDEX)
-            {
-                $url_translate = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=' . $this->config['quicklanguage_translate_api_key'] . '&text=';
-            }
-        }
+		$url_translate = '';
+		if (isset($this->config['quicklanguage_is_link_translate_show']) && $this->config['quicklanguage_is_link_translate_show'] >0 && isset($this->config['quicklanguage_translate_api_key']) && $this->config['quicklanguage_translate_api_key'] != '' && isset($this->config['quicklanguage_translate_api_type']))
+		{
+			if ($this->config['quicklanguage_translate_api_type'] ==listener::API_YANDEX)
+			{
+				 $url_translate = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=' . $this->config['quicklanguage_translate_api_key'] . '&text=';
+			}
+		}
 
 		$this->template->assign_vars(array(
 			'U_QUICK_LANG_ACTION'	=>  $url_back,
 			'S_QUICK_LANGUAGE_ENABLE'	=> (bool) $this->quick_language_enable,
 			'S_CURRENT_LANG'	=>	$this->current_lang,
 			'U_TRANSLATE_POST'	=>	$url_translate,
-			'S_SHOW_TRANSLATE_POST'	=> (bool)	$url_translate != '',
+			'S_SHOW_TRANSLATE_POST'	=> (bool) $url_translate != '',
 			));
 
 		foreach ($this->lang_info as $row)
