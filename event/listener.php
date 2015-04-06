@@ -179,7 +179,7 @@ class listener implements EventSubscriberInterface
 		{
 			if ($this->config['quicklanguage_translate_api_type'] ==listener::API_YANDEX)
 			{
-				 $url_translate = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=' . $this->config['quicklanguage_translate_api_key'] . '&text=';
+				$url_translate = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=' . $this->config['quicklanguage_translate_api_key'] . '&text=';
 			}
 		}
 
