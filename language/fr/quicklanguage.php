@@ -38,6 +38,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'QUICK_LANG_NO'	=> 'La langue ISO =%s n’est pas installée',
 	'QUICK_LANG_EN_DISABLE'	=> 'Le changement rapide de langue pour l’anglais est bloqué par l’administrateur. Vous pouvez réaliser cette action dans le panneau d’administration',
-	'QUICK_LANG_TRANSLATE_POST'	=> 'Translate',
-	'QUICK_LANG_ORIGINAL_POST'	=> 'Show original text',
+	'QUICK_LANG_TRANSLATE_POST'	=> 'Traduire',
+	'QUICK_LANG_ORIGINAL_POST'	=> 'Afficher le texte original',
 ));
