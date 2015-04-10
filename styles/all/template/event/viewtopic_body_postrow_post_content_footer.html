@@ -1,7 +1,10 @@
 <!-- IF S_SHOW_TRANSLATE_POST  -->
     <div id='translate{postrow.POST_ID}'>
     <!-- IF not  S_IS_BOT  -->
-	    <div id='divtranslatepost{postrow.POST_ID}' style="float: right;"><a href='' class='ql-translatepost' numpost='{postrow.POST_ID}'>{L_QUICK_LANG_TRANSLATE_POST}</a></div>
+	    <div id='divtranslatepost{postrow.POST_ID}' style="float: right;">
+            <a href='' class='ql-translatepost' numpost='{postrow.POST_ID}'>{L_QUICK_LANG_TRANSLATE_POST}</a>
+            <select id='cboLangYandex{postrow.POST_ID}' class='ql-lstLangYandex'><option value='{S_CURRENT_LANG}'>{S_CURRENT_LANG_NAME}</option></select>
+        </div>
 	    <div id='divoriginalpost{postrow.POST_ID}' style="float: right; display:none; "><a href='' class='ql-originalpost' numpost='{postrow.POST_ID}'>{L_QUICK_LANG_ORIGINAL_POST}</a></div>
     <!-- ENDIF -->
     </div>

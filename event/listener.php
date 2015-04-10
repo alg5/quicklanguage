@@ -108,7 +108,7 @@ class listener implements EventSubscriberInterface
 		}
 		$this->quick_language_enable = true;
 		$this->current_lang = $event['user_data']['is_registered'] ?  $event['user_lang_name'] :  $this->request_cookie('quicklang', $this->config['default_lang'] );
-		$submit = (isset($_POST['h_lang'])) ? true : false;
+        $submit = (isset($_POST['h_lang'])) ? true : false;
 		if (!$submit)
 		{
 			if ($event['user_data']['is_registered'])
@@ -175,21 +175,16 @@ class listener implements EventSubscriberInterface
 		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
 		$url_back = build_url();
 		$url_translate = '';
+		$url_translate_getlang = '';
+        $current_lang_name = '';
 		if (isset($this->config['quicklanguage_is_link_translate_show']) && $this->config['quicklanguage_is_link_translate_show'] >0 && isset($this->config['quicklanguage_translate_api_key']) && $this->config['quicklanguage_translate_api_key'] != '' && isset($this->config['quicklanguage_translate_api_type']))
 		{
 			if ($this->config['quicklanguage_translate_api_type'] ==listener::API_YANDEX)
 			{
-				$url_translate = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=' . $this->config['quicklanguage_translate_api_key'] . '&text=';
+				$url_translate = 'https://translate.yandex.net/api/v1.5/tr.json/translate';
+				$url_translate_getlang = 'https://translate.yandex.net/api/v1.5/tr.json/getLangs?&ui=en';
 			}
 		}
-
-		$this->template->assign_vars(array(
-			'U_QUICK_LANG_ACTION'	=>  $url_back,
-			'S_QUICK_LANGUAGE_ENABLE'	=> (bool) $this->quick_language_enable,
-			'S_CURRENT_LANG'	=>	$this->current_lang,
-			'U_TRANSLATE_POST'	=>	$url_translate,
-			'S_SHOW_TRANSLATE_POST'	=> (bool) $url_translate != '',
-			));
 
 		foreach ($this->lang_info as $row)
 		{
@@ -201,8 +196,22 @@ class listener implements EventSubscriberInterface
 				'LANG_LOCAL_NAME'		=> censor_text($row['lang_local_name']),
 				'S_SELECTED_LANG'	=>	$this->current_lang == $row['lang_iso'],
 				));
+                if ($this->current_lang == $row['lang_iso'])
+                {
+                    $current_lang_name = censor_text($row['lang_local_name']);
+                }
 			}
 		}
+		$this->template->assign_vars(array(
+			'U_QUICK_LANG_ACTION'	=>  $url_back,
+			'S_QUICK_LANGUAGE_ENABLE'	=> (bool) $this->quick_language_enable,
+			'S_CURRENT_LANG'	=>	$this->current_lang,
+			'S_CURRENT_LANG_NAME'	=>	$current_lang_name,
+			'U_TRANSLATE_POST'	=>	$url_translate,
+			'U_TRANSLATE_GETLANG'	=>	$url_translate_getlang,
+			'S_YK'	=>	isset($this->config['quicklanguage_translate_api_key']) ? $this->config['quicklanguage_translate_api_key'] : '',
+			'S_SHOW_TRANSLATE_POST'	=> (bool) $url_translate != '',
+			));
 		//todo
 		$redirect = append_sid("{$this->root_path}" . $url_back, "");
 

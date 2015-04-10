@@ -37,7 +37,7 @@ class acp_quicklanguage_module
 		}
 
 		$display_vars = array(
-				'title'	=> 'ACP_QUICKREPLY',
+				'title'	=> 'ACP_QUICK_LANGUAGE',
 				'vars'	=> array(
 					'legend1'			=> '',
 					'quicklanguage_allow_guests'				=> array('lang' => 'ACP_QUICK_LANGUAGE_ALLOW_GUESTS', 'validate' => 'bool', 'type' => 'radio:yes_no', 'explain' => true),

@@ -37,6 +37,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'QUICK_LANG_NO'	=> 'Языковой пакет ISO =%s не установлен',
 	'QUICK_LANG_EN_DISABLE'	=> 'Быстрая смена на английский язык запрещена администратором. Вы можете сменить язык через личный раздел',
-	'QUICK_LANG_TRANSLATE_POST'	=> 'Перевести',
+	'QUICK_LANG_TRANSLATE_POST'	=> 'Перевести на ',
 	'QUICK_LANG_ORIGINAL_POST'	=> 'Показать оригинальный текст',
 ));

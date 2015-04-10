@@ -10,6 +10,7 @@ Extension for phpBB 3.1 lets visitors switch quickly the board language.
 - Automatically redirects back to the original page being viewed after language has changed.
 - Works for guests too, but uses a special cookie instead.
 - ACP module to set guest access and show icon for English.
+- Adds a "translate to" link and combobox with an option to choose a language at the bottom of each post.
 
 ##Hidden features ("Easter Egg")
 Admin adds the following lines to appropriate language file for those names of categories/forums that he wants to see in different languages:
@@ -35,8 +36,10 @@ The extension checks if the appropriate language variable exists. if it does, th
 - Ukrainian
 
 #### To do list
--  responsive layout.
+- responsive layout.
 - check user data and return error message to user
+- an ability to translate selected text
+- extended translation block with wide options
 
 ## Installation
 1. [Download the latest release](https://github.com/alg5/quicklanguage) and unzip it.
@@ -65,6 +68,7 @@ Icons of flags can be downloaded from www.gosquared.com/download/pixels/flags.zi
 - расширение позволяет переключать язык гостям конференции, используя куки для сохранения состояния
 - ACP module to set guest access and show icon for English`
 - В настройках расширения( в панели администратора) можно установить гостевой доступ и показ/сокрытие иконки английского языка
+- Добавление ссылки "перевод на" и комбо с возможностью выбора языка под каждым постом
 
 ## Скрытые возможности  ("пасхальное яйцо") расширения
 Админ, для тех названий категорий/форумов, которые он хочет видеть на разных языках, добавляет в свой языковой файл строки по принципу
@@ -92,6 +96,8 @@ FORUM_DESC_N, где N - айди форума/категории
 #### To do список( планируется)
 -  аддаптивный дизайн
 - Проверка данных пользователя и возвращение пользователю индикации об ошибке
+- возможность перевода выделенного текста
+ - расширенный блок перевода с различными опциями
 
 ## Инсталляция
 1. [Скачать ](https://github.com/alg5/quicklanguage) и разархивировать.
