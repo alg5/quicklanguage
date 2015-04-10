@@ -108,7 +108,7 @@ class listener implements EventSubscriberInterface
 		}
 		$this->quick_language_enable = true;
 		$this->current_lang = $event['user_data']['is_registered'] ?  $event['user_lang_name'] :  $this->request_cookie('quicklang', $this->config['default_lang'] );
-        $submit = (isset($_POST['h_lang'])) ? true : false;
+		$submit = (isset($_POST['h_lang'])) ? true : false;
 		if (!$submit)
 		{
 			if ($event['user_data']['is_registered'])
@@ -176,7 +176,7 @@ class listener implements EventSubscriberInterface
 		$url_back = build_url();
 		$url_translate = '';
 		$url_translate_getlang = '';
-        $current_lang_name = '';
+		$current_lang_name = '';
 		if (isset($this->config['quicklanguage_is_link_translate_show']) && $this->config['quicklanguage_is_link_translate_show'] >0 && isset($this->config['quicklanguage_translate_api_key']) && $this->config['quicklanguage_translate_api_key'] != '' && isset($this->config['quicklanguage_translate_api_type']))
 		{
 			if ($this->config['quicklanguage_translate_api_type'] ==listener::API_YANDEX)
@@ -196,10 +196,10 @@ class listener implements EventSubscriberInterface
 				'LANG_LOCAL_NAME'		=> censor_text($row['lang_local_name']),
 				'S_SELECTED_LANG'	=>	$this->current_lang == $row['lang_iso'],
 				));
-                if ($this->current_lang == $row['lang_iso'])
-                {
-                    $current_lang_name = censor_text($row['lang_local_name']);
-                }
+				if ($this->current_lang == $row['lang_iso'])
+				{
+					$current_lang_name = censor_text($row['lang_local_name']);
+				}
 			}
 		}
 		$this->template->assign_vars(array(

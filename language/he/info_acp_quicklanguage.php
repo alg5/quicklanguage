@@ -34,7 +34,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'ACP_QUICK_LANGUAGE'						=> 'החלפה מהירה בין שפות.',
-    	'ACP_QUICK_LANGUAGE_EXPLAIN'				=> 'הוספת אפשרות בחירת שפה בכל עמוד',
+	'ACP_QUICK_LANGUAGE_EXPLAIN'				=> 'הוספת אפשרות בחירת שפה בכל עמוד',
 	'ACP_QUICK_LANGUAGE_SETTINGS'				=> 'הגדרות',
 	'ACP_QUICK_LANGUAGE_SETTINGS_COMMON'				=> 'הגדרות כלליות',
 	'ACP_QUICK_LANGUAGE_SETTINGS_SHOW'				=> 'הגדרות תצוגה',
