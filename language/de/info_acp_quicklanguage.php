@@ -2,7 +2,7 @@
 
 /**
 *
-* @package Quick LANGUAGE [Spanish]
+* @package Quick LANGUAGE [Deutsch] von edualla (Eduard Schlak)
 * @copyright (c) 2014 PayBas
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 */
@@ -12,12 +12,12 @@
 */
 if (!defined('IN_PHPBB'))
 {
-	exit;
+exit;
 }
 
 if (empty($lang) || !is_array($lang))
 {
-	$lang = array();
+$lang = array();
 }
 
 // DEVELOPERS PLEASE NOTE
@@ -33,19 +33,19 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'ACP_QUICK_LANGUAGE'						    => 'Schneller Sprachwechsel',
-	'ACP_QUICK_LANGUAGE_EXPLAIN'				    => 'Hinzufügen der Möglichkeit, eine Sprache von jeder Seite auszuwählen',
-	'ACP_QUICK_LANGUAGE_SETTINGS'				    => 'Einstellungen',
-	'ACP_QUICK_LANGUAGE_SETTINGS_COMMON'			=> 'Allgemeine Einstellungen',
-	'ACP_QUICK_LANGUAGE_SETTINGS_SHOW'				=> 'Anzeigeeinstellungen',
+'ACP_QUICK_LANGUAGE'	=> 'Schneller Sprachwechsel',
+'ACP_QUICK_LANGUAGE_EXPLAIN'	=> 'Hinzufügen der Möglichkeit, eine Sprache von jeder Seite auswählen zu können',
+'ACP_QUICK_LANGUAGE_SETTINGS'	=> 'Einstellungen',
+'ACP_QUICK_LANGUAGE_SETTINGS_COMMON'	=> 'Allgemeine Einstellungen',
+'ACP_QUICK_LANGUAGE_SETTINGS_SHOW'	=> 'Anzeigeeinstellungen',
 
-	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW'			=> 'Englische Sprache anzeigen',
-	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW_EXPLAIN'	=> 'Standardsymbol auf Englisch umschalten wird als Wahl zur Verfügung stehen. <br /> Für nicht-englischsprachigen Foren wird empfohlen, diese Option zu deaktivieren',
-	'ACP_QUICK_LANGUAGE_ALLOW_GUESTS'			    => 'Sprachwechsel für Gäste erlauben',
-	'ACP_QUICK_LANGUAGE_ALLOW_GUESTS_EXPLAIN'	    => 'Standardmäßig können die Gäste die Sprache des Forums ändern. Die Wahl der Gäste wird in dem Browser-Cachespeicher gespeichert (IE-Version 8 und älter wird nicht unterstützt)',
-	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW'			=> 'Show link "translate"',
-	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW_EXPLAIN'	=> 'If selected, the link will be shown at the bottom of each post.  At the moment translation works only through api yandex, <br /> in the future is expected to add a translation alternatives',
-	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW_EXPLAIN_1'	=> 'Achtung! Das Translation arbeits via external services. To access the service, you must have API-key, the key can be obtained free of charge by clicking the link selected service. If the key is not entered, the link will not be displayed',
-	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_GET_KEY'			=> 'Get the API-ключ"',
-	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SET_KEY'			=> 'Enter the API-ключ',
+'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW'	=> 'Englische Sprache anzeigen',
+'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW_EXPLAIN'	=> 'Standardsymbol auf Englisch umschalten wird als Wahl zur Verfügung stehen. <br /> Für nicht-englischsprachige Foren wird empfohlen, diese Option zu deaktivieren',
+'ACP_QUICK_LANGUAGE_ALLOW_GUESTS'	=> 'Sprachwechsel für Gäste erlauben',
+'ACP_QUICK_LANGUAGE_ALLOW_GUESTS_EXPLAIN'	=> 'Standardmäßig können die Gäste die Sprache des Forums ändern. Die Wahl der Gäste wird in dem Browser-Cachespeicher gespeichert (IE-Version 8 und älter wird nicht unterstützt)',
+'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW'	=> 'Link "Übersetzen" anzeigen',
+'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW_EXPLAIN'	=> 'Wenn gewählt, wird der Link "Übersetzen" unten bei jedem Beitrag angezeigt. Zur Zeit wird die Übersetzung über API Yandex durchgeführt, <br /> in der Zukunft wird u.U. eine alternative Möglichkeit für Übersetzung hinzugefühgt.',
+'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW_EXPLAIN_1'	=> 'Achtung! Die Übersetzung arbeitet über externe Dienste. Um den Dienst in Anspruch zu nehmen, musst Du einen API-Schlüssel besitzen; den Schlüssel kannst Du kostenlos bekommen, indem Du auf den Link des ausgewählten Dienstes anklickst. Wenn der Schlüssel nicht eingegeben wird, so wird der Link nicht angezeigt werden',
+'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_GET_KEY'	=> 'Den API-Schlüssel anfordern"',
+'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SET_KEY'	=> 'Den API-Schlüssel eingeben',
 ));

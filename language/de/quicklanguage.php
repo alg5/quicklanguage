@@ -1,11 +1,11 @@
 <?php
-/** 
+/**
 *
-* quicklanguage [English]
+* quicklanguage [Deutsch] von edualla (Eduard Schlak)
 *
 * @package quicklanguage
 * @copyright (c) 2014 alg
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License 
+* @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
 */
 
@@ -14,12 +14,12 @@
 */
 if (!defined('IN_PHPBB'))
 {
-	exit;
+exit;
 }
 
 if (empty($lang) || !is_array($lang))
 {
-	$lang = array();
+$lang = array();
 }
 
 // DEVELOPERS PLEASE NOTE
@@ -35,8 +35,8 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'QUICK_LANG_NO'	        => 'Sprachpaket ISO =%s nicht installiert',
-	'QUICK_LANG_EN_DISABLE'	=> 'Schnellschalter auf Englisch vom Administrator blockiert. Diese Aktion können Sie in der UCP durchführen',
-	'QUICK_LANG_TRANSLATE_POST'	=> 'Translate',
-	'QUICK_LANG_ORIGINAL_POST'	=> 'Show original text',
+'QUICK_LANG_NO'	=> 'Sprachpaket ISO =%s wurde nicht installiert',
+'QUICK_LANG_EN_DISABLE'	=> 'Schalter für Schnellwechsel auf Englisch wurde vom Administrator blockiert. Diese Aktion kannst Du in der UCP durchführen',
+'QUICK_LANG_TRANSLATE_POST'	=> 'Übersetzen',
+'QUICK_LANG_ORIGINAL_POST'	=> 'Den Originaltext anzeigen',
 ));
