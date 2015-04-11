@@ -11,7 +11,7 @@
 */
 
 /**
-* @ignore
+* DO NOT CHANGE
 */
 if (!defined('IN_PHPBB'))
 {
@@ -34,10 +34,14 @@ if (empty($lang) || !is_array($lang))
 // You do not need this where single placeholders are used, e.g. 'Message %d' is fine
 // equally where a string contains only two placeholders which are used to wrap text
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
+//
+// Some characters you may want to copy&paste:
+// ’ « » “ ” …
+//
 
 $lang = array_merge($lang, array(
 	'QUICK_LANG_NO'	=> 'La langue ISO =%s n’est pas installée',
 	'QUICK_LANG_EN_DISABLE'	=> 'Le changement rapide de langue est bloqué par l’administrateur. Il est possible de réaliser cette action depuis le panneau d’administration.',
-	'QUICK_LANG_TRANSLATE_POST'	=> 'Traduire',
+	'QUICK_LANG_TRANSLATE_POST'	=> 'Traduire en',
 	'QUICK_LANG_ORIGINAL_POST'	=> 'Afficher le texte original',
 ));
