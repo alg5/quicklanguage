@@ -47,7 +47,7 @@ $lang = array_merge($lang, array(
 	'ACP_QUICK_LANGUAGE_SETTINGS_SHOW'				=> 'Voir les paramètres',
 
 	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW'			=> 'Afficher les drapeaux',
-	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW_EXPLAIN'	=> 'Par défaut une icône (drapeau) pour l’anglais sera affichée. <br />Si vous avez plusieurs langues installées, vous aurez autant de drapeaux correspondants.',
+	'ACP_QUICK_LANGUAGE_IS_ENGLISH_SHOW_EXPLAIN'	=> 'Par défaut une icône (drapeau) pour l’anglais sera affichée.<br />Si vous avez plusieurs langues installées, vous aurez autant de drapeaux correspondants.',
 	'ACP_QUICK_LANGUAGE_ALLOW_GUESTS'			=> 'Permettre aux invités de changer de langue',
 	'ACP_QUICK_LANGUAGE_ALLOW_GUESTS_EXPLAIN'	=> 'Ce paramètre permet aux invités de changer aussi de langue. Tant qu’il ne sont pas connectés, un cookie sera utilisé pour mémoriser la langue sélectionnée.',
 	'ACP_QUICKLANGUAGE_IS_LINK_TRANSLATE_SHOW'			=> 'Afficher le lien « Traduire en »',
