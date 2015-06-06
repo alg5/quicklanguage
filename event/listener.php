@@ -104,7 +104,7 @@ class listener implements EventSubscriberInterface
 		{
 			//do nothing
 			$this->quick_language_enable = false;
-            $this->current_lang = $event['user_data']['is_registered'] ?  $event['user_lang_name'] :  $this->config['default_lang'];
+				$this->current_lang = $event['user_data']['is_registered'] ?  $event['user_lang_name'] :  $this->config['default_lang'];
 			return;
 		}
 		$this->quick_language_enable = true;
@@ -169,10 +169,10 @@ class listener implements EventSubscriberInterface
 
 	public function page_header_after($event)
 	{
-        //if (!$this->quick_language_enable)
-        //{
-        //    return;
-        //}
+		//if (!$this->quick_language_enable)
+		//{
+		//	 return;
+		//}
 		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
 		$url_back = build_url();
 		$url_translate = '';
