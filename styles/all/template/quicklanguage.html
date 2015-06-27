@@ -1,9 +1,8 @@
-<li class="rightside no-bulletin ">
-	<form id='frmQuickLang' action="{U_QUICK_LANG_ACTION}" method="post">
+<li class="rightside no-bulletin">
+	<form id='frmQuickLang' action="{U_QUICK_LANG_ACTION}" method="post" class="lang_form">
             <!-- BEGIN langs -->
-                <div class='lang <!-- IF langs.S_SELECTED_LANG  --> lang_selected<!-- ENDIF -->' title='{langs.LANG_LOCAL_NAME}' iso='{langs.LANG_ISO}' style='background:url("./ext/alg/quicklanguage/styles/all/theme/images/flags/{langs.LANG_ISO}.png") no-repeat'></div>&nbsp;
+                <div class='lang <!-- IF langs.S_SELECTED_LANG  --> lang_selected<!-- ENDIF -->' title='{langs.LANG_LOCAL_NAME}' iso='{langs.LANG_ISO}' style='background:url("./ext/alg/quicklanguage/styles/all/theme/images/flags/{langs.LANG_ISO}.png") no-repeat'></div>
             <!-- END langs -->
             <input type="hidden" name='h_lang' />
 	</form>
 </li>
-
