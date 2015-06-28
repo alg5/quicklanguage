@@ -3,7 +3,7 @@
     "type": "phpbb-extension",
     "description": "Adds an icons for each installed language to the header, detects a selection change and triggers a board language change as through the UCP.",
     "homepage": "https://github.com/alg5/quicklanguage",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "time": "2015-01-31",
     "license": "GPL-2.0",
     "authors": [
@@ -17,10 +17,10 @@
     "require": {
         "php": ">=5.3.3"
     },
-	"require-dev": {
+    "require-dev": {
       "phpbb/epv": "dev-master"
    },
-	"extra": {
+    "extra": {
         "display-name": "Quick Language",
         "soft-require": {
            "phpbb/phpbb": "3.1.*@dev"

@@ -18,11 +18,23 @@ Admin adds the following lines to appropriate language file for those names of c
 FORUM_NAME_N, where N - ID of the forum/category
 <br />
 FORUM_DESC_N, where N - ID of the forum/category
+<br />
+Following lines rename some text values of the board
+SITENAME_NAME - SITENAME
+<br />
+SITE_DESCRIPTION_NAME - SITE_DESCRIPTION
+<br />
+SITE_HOME_NAME- SITE_HOME
+<br />
+INDEXPAGE_NAME_NAME - INDEXPAGE
+<br />
+
+
 
 The extension checks if the appropriate language variable exists. if it does, then the variable displays as the title. Otherwise, the title will remain default, as it was stored in the database (same applies to the description of the forum/category).
 
 #### Requirements
-- phpBB 3.1-RC3 or higher
+- phpBB 3.1-RC5 or higher
 - PHP 5.3.3 or higher
 
 #### Supported languages 
@@ -75,6 +87,15 @@ Icons of flags can be downloaded from www.gosquared.com/download/pixels/flags.zi
 
 FORUM_NAME_N, где N - айди форума/категории
 FORUM_DESC_N, где N - айди форума/категории
+Следующие строки переопределяют некоторые обшие текстовые значения конференции
+SITENAME_NAME - SITENAME
+<br />
+SITE_DESCRIPTION_NAME - SITE_DESCRIPTION
+<br />
+SITE_HOME_NAME- SITE_HOME
+<br />
+INDEXPAGE_NAME_NAME - INDEXPAGE
+<br />
 
 Расширение проверит, есть ли соответствующая языковая переменная, если есть, то выведет её в качестве названия, если нет, название останется стандартным, как было записано в базе( то же самое относится и к описанию форума/категории)
 

@@ -22,5 +22,11 @@
 
 .lang_form
 {
-    padding: 5px;
+    /*padding: 5px;*/
+}
+.lang-wrapper 
+{
+    display:inline-block;
+	vertical-align:middle; 
+	margin-top: auto;
 }

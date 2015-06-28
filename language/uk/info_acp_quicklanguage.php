@@ -2,8 +2,8 @@
 
 /**
 *
-* @package Quick LANGUAGE [Spanish]
-* @copyright (c) 2014 PayBas
+* @package quicklanguage [Ukrainian]
+* @copyright (c) 2014 Alg
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 */
 

@@ -13,10 +13,6 @@ namespace alg\quicklanguage\event;
 /**
  * @ignore
  */
-//if (!defined('IN_PHPBB'))
-//{
-//	exit;
-//}
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -78,6 +74,7 @@ class listener implements EventSubscriberInterface
 			'core.display_forums_modify_template_vars'		=> 'display_forums_modify_template_vars',
 			'core.display_forums_modify_category_template_vars'		=> 'display_forums_modify_category_template_vars',
 			'core.viewforum_get_topic_data'=> 'viewforum_get_topic_data',
+			'core.generate_forum_nav'=> 'generate_forum_nav',
 		);
 	}
 
@@ -213,7 +210,24 @@ class listener implements EventSubscriberInterface
 			'S_YK'	=>	isset($this->config['quicklanguage_translate_api_key']) ? $this->config['quicklanguage_translate_api_key'] : '',
 			'S_SHOW_TRANSLATE_POST'	=> (bool) $url_translate != '',
 			));
-		//todo
+
+        if ($this->config['sitename'] && isset($this->user->lang['SITENAME_NAME']))
+        {
+		    $this->template->assign_vars(array('SITENAME'	=> $this->user->lang['SITENAME_NAME'],));
+        }
+        if ($this->config['site_desc'] && isset($this->user->lang['SITE_DESCRIPTION_NAME']))
+        {
+		    $this->template->assign_vars(array('SITE_DESCRIPTION'	=> $this->user->lang['SITE_DESCRIPTION_NAME'],));
+        }
+        if ($this->config['site_home_url'] && isset($this->user->lang['SITE_HOME_NAME']))
+        {
+		    $this->template->assign_vars(array('L_SITE_HOME'	=> $this->user->lang['SITE_HOME_NAME'],));
+        }
+        $index_path = append_sid("{$this->root_path}index.$this->php_ext");
+        if ($index_path && isset($this->user->lang['INDEXPAGE_NAME']))
+        {
+		    $this->template->assign_vars(array('L_INDEX'	=> $this->user->lang['INDEXPAGE_NAME'],));
+        }
 		$redirect = append_sid("{$this->root_path}" . $url_back, "");
 
 		if ($this->error == listener::QUICK_LANG_NO)
@@ -277,6 +291,28 @@ class listener implements EventSubscriberInterface
 					'FORUM_DESC'	=> $forum_desc,
 				));
 	}
+
+	public function generate_forum_nav($event)
+	{
+		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
+        $navlinks = $event['navlinks'];
+		if (isset($this->user->lang['FORUM_NAME_' . $navlinks['FORUM_ID']]))
+		{
+			$navlinks['FORUM_NAME'] = $this->user->lang['FORUM_NAME_' . $navlinks['FORUM_ID']];
+			$event['navlinks'] = $navlinks;
+		}
+		$navlinks_parents = $event['navlinks_parents'];
+		foreach($navlinks_parents as $key => $navlink)
+		{
+			$forum_id = $navlink['FORUM_ID'];
+			if (isset($this->user->lang['FORUM_NAME_' .  $navlink['FORUM_ID']]))
+			{
+				$navlink['FORUM_NAME'] = $this->user->lang['FORUM_NAME_' . $navlink['FORUM_ID']];
+				$navlinks_parents[$key] = $navlink;
+			}
+			$event['navlinks_parents'] = $navlinks_parents;
+		}
+    }
 
 	public function request_cookie($name, $default = null)
 	{

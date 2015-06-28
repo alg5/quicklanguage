@@ -3,7 +3,7 @@
 /**
 *
 * @package Quick LANGUAGE [Deutsch] von edualla (Eduard Schlak)
-* @copyright (c) 2014 PayBas
+* @copyright (c) 2014 Alg
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 */
 

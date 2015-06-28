@@ -1,7 +1,7 @@
 <?php
 /** 
 *
-* quicklanguage [English]
+* quicklanguage [Сzech]
 *
 * @package quicklanguage
 * @copyright (c) 2014 alg

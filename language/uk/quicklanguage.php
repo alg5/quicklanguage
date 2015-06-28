@@ -1,9 +1,9 @@
 <?php
 /** 
 *
-* liveSearch [Russian]
+* quicklanguage [Ukrainian]
 *
-* @package liveSearch
+* @package quicklanguage
 * @copyright (c) 2014 alg
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License 
 *
@@ -39,4 +39,15 @@ $lang = array_merge($lang, array(
 	'QUICK_LANG_EN_DISABLE'		=> 'швидка зміна на англійську мову заборонена адміністратором. ви можете змінити мову через особистий розділ.',
 	'QUICK_LANG_TRANSLATE_POST'	=> 'Переклад',
 	'QUICK_LANG_ORIGINAL_POST'	=> 'Показати текст оригіналу',
-));
+	//for example
+	'FORUM_NAME_1'	=> 'Чавунок',
+	'FORUM_DESC_1'	=> 'форум для розігрування питань',
+	'FORUM_NAME_8'	=> 'Hайд-парк',
+	'FORUM_DESC_8'	=> 'не цензурні питання',
+	'FORUM_NAME_9'	=> 'Зробити б життя з кого..',
+	'SITENAME_NAME'	=> 'ваш_домен.uk',
+	'SITE_DESCRIPTION_NAME'	=> 'Короткий опис вашої конференції',
+	'SITE_HOME_NAME'	=> 'Домашня сторінка',
+	'INDEXPAGE_NAME'	=> 'Головна сторінка',
+
+    ));
