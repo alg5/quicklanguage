@@ -211,23 +211,23 @@ class listener implements EventSubscriberInterface
 			'S_SHOW_TRANSLATE_POST'	=> (bool) $url_translate != '',
 			));
 
-        if ($this->config['sitename'] && isset($this->user->lang['SITENAME_NAME']))
-        {
-		    $this->template->assign_vars(array('SITENAME'	=> $this->user->lang['SITENAME_NAME'],));
-        }
-        if ($this->config['site_desc'] && isset($this->user->lang['SITE_DESCRIPTION_NAME']))
-        {
-		    $this->template->assign_vars(array('SITE_DESCRIPTION'	=> $this->user->lang['SITE_DESCRIPTION_NAME'],));
-        }
-        if ($this->config['site_home_url'] && isset($this->user->lang['SITE_HOME_NAME']))
-        {
-		    $this->template->assign_vars(array('L_SITE_HOME'	=> $this->user->lang['SITE_HOME_NAME'],));
-        }
-        $index_path = append_sid("{$this->root_path}index.$this->php_ext");
-        if ($index_path && isset($this->user->lang['INDEXPAGE_NAME']))
-        {
-		    $this->template->assign_vars(array('L_INDEX'	=> $this->user->lang['INDEXPAGE_NAME'],));
-        }
+		if ($this->config['sitename'] && isset($this->user->lang['SITENAME_NAME']))
+		{
+			$this->template->assign_vars(array('SITENAME'	=> $this->user->lang['SITENAME_NAME'],));
+		}
+		if ($this->config['site_desc'] && isset($this->user->lang['SITE_DESCRIPTION_NAME']))
+		{
+			$this->template->assign_vars(array('SITE_DESCRIPTION'	=> $this->user->lang['SITE_DESCRIPTION_NAME'],));
+		}
+		if ($this->config['site_home_url'] && isset($this->user->lang['SITE_HOME_NAME']))
+		{
+			$this->template->assign_vars(array('L_SITE_HOME'	=> $this->user->lang['SITE_HOME_NAME'],));
+		}
+		$index_path = append_sid("{$this->root_path}index.$this->php_ext");
+		if ($index_path && isset($this->user->lang['INDEXPAGE_NAME']))
+		{
+			$this->template->assign_vars(array('L_INDEX'	=> $this->user->lang['INDEXPAGE_NAME'],));
+		}
 		$redirect = append_sid("{$this->root_path}" . $url_back, "");
 
 		if ($this->error == listener::QUICK_LANG_NO)
@@ -295,7 +295,7 @@ class listener implements EventSubscriberInterface
 	public function generate_forum_nav($event)
 	{
 		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
-        $navlinks = $event['navlinks'];
+		$navlinks = $event['navlinks'];
 		if (isset($this->user->lang['FORUM_NAME_' . $navlinks['FORUM_ID']]))
 		{
 			$navlinks['FORUM_NAME'] = $this->user->lang['FORUM_NAME_' . $navlinks['FORUM_ID']];
@@ -312,7 +312,7 @@ class listener implements EventSubscriberInterface
 			}
 			$event['navlinks_parents'] = $navlinks_parents;
 		}
-    }
+	}
 
 	public function request_cookie($name, $default = null)
 	{

@@ -50,4 +50,4 @@ $lang = array_merge($lang, array(
 	'SITE_HOME_NAME'	=> 'Домашня сторінка',
 	'INDEXPAGE_NAME'	=> 'Головна сторінка',
 
-    ));
+	));
