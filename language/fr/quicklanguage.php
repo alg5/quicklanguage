@@ -44,4 +44,15 @@ $lang = array_merge($lang, array(
 	'QUICK_LANG_EN_DISABLE'	=> 'Le changement rapide de langue est bloqué par l’administrateur. Il est possible de réaliser cette action depuis le panneau d’administration.',
 	'QUICK_LANG_TRANSLATE_POST'	=> 'Traduire en',
 	'QUICK_LANG_ORIGINAL_POST'	=> 'Afficher le texte original',
+// Fonction cachée pour remplacer par exemple en anglais les noms des forums, leurs descriptions, le nom du site, sa description, etc..
+// Vous devez utiliser le fichier de langue qui vous intéresse. Si votre forum est français, vous allez utiliser le fichier de langue anglais, ou espagnol, etc..
+// 	'FORUM_NAME_1'	=> 'nom du forum ayant l’ID numéro 1',
+// 	'FORUM_DESC_1'	=> 'description du forum ayant l’ID numéro 1',
+// 	'FORUM_NAME_8'	=> 'nom du forum ayant l’ID numéro 8',
+// 	'FORUM_DESC_8'	=> ' description du forum ayant l’ID numéro 8',
+// 	'FORUM_NAME_9'	=> 'nom du forum ayant l’ID numéro 9',
+// 	'SITENAME_NAME'	=> 'Nom du site',
+// 	'SITE_DESCRIPTION_NAME'	=> 'Description du site',
+// 	'SITE_HOME_NAME'	=> 'Libellé du site internet',
+// 	'INDEXPAGE_NAME'	=> 'Libellé de l’index du forum',
 ));
