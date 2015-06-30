@@ -38,6 +38,7 @@ The extension checks if the appropriate language variable exists. if it does, th
 - PHP 5.3.3 or higher
 
 #### Supported languages 
+- Arabic
 - Chinese
 - Сzech
 - Deutsch
@@ -106,6 +107,7 @@ INDEXPAGE_NAME_NAME - INDEXPAGE
 
 #### Поддерживаемые языки
 - Английский
+- Арабский
 - Иврит
 - Китайский
 - Немецкий
