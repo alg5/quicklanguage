@@ -39,6 +39,7 @@ The extension checks if the appropriate language variable exists. if it does, th
 
 #### Supported languages 
 - Arabic
+- Bulgarian
 - Chinese
 - Сzech
 - Deutsch
@@ -108,6 +109,7 @@ INDEXPAGE_NAME_NAME - INDEXPAGE
 #### Поддерживаемые языки
 - Английский
 - Арабский
+- Болгарский
 - Иврит
 - Китайский
 - Немецкий
