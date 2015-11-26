@@ -39,7 +39,6 @@ The extension checks if the appropriate language variable exists. if it does, th
 
 #### Supported languages 
 - Arabic
-- Bulgarian
 - Chinese
 - Сzech
 - Deutsch
@@ -47,6 +46,7 @@ The extension checks if the appropriate language variable exists. if it does, th
 - French
 - Hebrew
 - Russian
+- Turkey
 - Ukrainian
 
 #### To do list
@@ -109,11 +109,11 @@ INDEXPAGE_NAME_NAME - INDEXPAGE
 #### Поддерживаемые языки
 - Английский
 - Арабский
-- Болгарский
 - Иврит
 - Китайский
 - Немецкий
 - Русский
+- Турецкий
 - Украинский
 - Французский
 - Чешский
