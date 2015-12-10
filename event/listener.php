@@ -172,6 +172,10 @@ class listener implements EventSubscriberInterface
 		//}
 		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
 		$url_back = build_url();
+		if (substr($url_back, -1) == '?' )
+		{
+			$url_back = rtrim($url_back, '?');
+		}
 		$url_translate = '';
 		$url_translate_getlang = '';
 		$current_lang_name = '';
