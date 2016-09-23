@@ -39,10 +39,10 @@ $lang = array_merge($lang, array(
 	'QUICK_LANG_EN_DISABLE'	=> 'Quick switch on English is blocked by administrator. You can do this action in the UCP ',
 	'QUICK_LANG_TRANSLATE_POST'	=> 'Translate to',
 	'QUICK_LANG_ORIGINAL_POST'	=> 'Show original text',
-    'SITE_DESCRIPTION_NAME' => 'My Site description',
-    //for example
+	'SITE_DESCRIPTION_NAME' => 'My Site description',
+	//for example
 	'FORUM_NAME_34'	=> 'Club news',
 	'FORUM_NAME_28'	=> 'Technical support',
 	'FORUM_NAME_486'	=> 'FORUM_NAME_486',
-    
+
 ));

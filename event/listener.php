@@ -349,10 +349,10 @@ class listener implements EventSubscriberInterface
 		{
 		//print_r('$key = ' . $key);
 			if (isset($this->user->lang['FORUM_NAME_' . $row['forum_id']]))
-			{
-				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
-				$rowset[$key] = $row;
-			}
+		{
+			$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
+			$rowset[$key] = $row;
+		}
 
 		}
 		 $event['rowset'] = $rowset;
@@ -368,10 +368,10 @@ class listener implements EventSubscriberInterface
 		{
 		//print_r('$key = ' . $key);
 			if (isset($this->user->lang['FORUM_NAME_' . $row['forum_id']]))
-			{
-				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
-				$rowset[$key] = $row;
-			}
+		{
+			$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
+			$rowset[$key] = $row;
+		}
 
 		}
 		 $event['rowset'] = $rowset;
@@ -385,10 +385,10 @@ class listener implements EventSubscriberInterface
 		{
 		//print_r('$key = ' . $key);
 			if (isset($this->user->lang['FORUM_NAME_' . $row['forum_id']]))
-			{
-				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
-				$rowset[$key] = $row;
-			}
+		{
+			$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
+			$rowset[$key] = $row;
+		}
 
 		}
 		 $event['rowset'] = $rowset;
@@ -402,10 +402,10 @@ class listener implements EventSubscriberInterface
 		{
 		//print_r('$key = ' . $key);
 			if (isset($this->user->lang['FORUM_NAME_' . $row['forum_id']]))
-			{
-				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
-				$rowset[$key] = $row;
-			}
+		{
+			$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
+			$rowset[$key] = $row;
+		}
 
 		}
 		 $event['rowset'] = $rowset;
@@ -419,10 +419,10 @@ class listener implements EventSubscriberInterface
 		{
 		//print_r('$key = ' . $key);
 			if (isset($this->user->lang['FORUM_NAME_' . $row['forum_id']]))
-			{
-				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
-				$rowset[$key] = $row;
-			}
+		{
+			$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
+			$rowset[$key] = $row;
+		}
 
 		}
 		 $event['rowset'] = $rowset;
