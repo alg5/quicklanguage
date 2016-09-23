@@ -75,6 +75,15 @@ class listener implements EventSubscriberInterface
 			'core.display_forums_modify_category_template_vars'		=> 'display_forums_modify_category_template_vars',
 			'core.viewforum_get_topic_data'=> 'viewforum_get_topic_data',
 			'core.generate_forum_nav'=> 'generate_forum_nav',
+			//'core.search_forum_modify_rowset'=> array('search_forum_modify_rowset', -10),
+			//'core.forum_list_modify_rowset'=> array('forum_list_modify_rowset', -10),
+			'core.search_modify_forum_select_list'=> array('search_modify_forum_select_list', -10),
+			'core.get_forum_list_modify_data'=> array('get_forum_list_modify_data', -10),
+			'core.forum_list_jumpbox_modify_rowset'=> array('forum_list_jumpbox_modify_rowset', -10),
+			'core.forum_list_make_forum_select_modify_rowset'=> array('forum_list_make_forum_select_modify_rowset', -10),
+			'core.acp_forums_modify_rowset'=> array('acp_forums_modify_rowset', -10),
+			'core.acp_manage_forums_initialise_data'=> array('acp_manage_forums_initialise_data', -10),
+			'core.display_forums_modify_forum_rows'=> array('display_forums_modify_forum_rows', -10),
 		);
 	}
 
@@ -227,6 +236,14 @@ class listener implements EventSubscriberInterface
 		{
 			$this->template->assign_vars(array('L_SITE_HOME'	=> $this->user->lang['SITE_HOME_NAME'],));
 		}
+		$forum =	(int) $this->request->variable('f', '0');
+		if($forum && isset($this->user->lang['FORUM_NAME_' . $forum]))
+		{
+			$this->template->assign_vars(array('FORUM_NAME'	=> $this->user->lang['FORUM_NAME_' . $forum],));
+
+		}
+		
+
 		$index_path = append_sid("{$this->root_path}index.$this->php_ext");
 		if ($index_path && isset($this->user->lang['INDEXPAGE_NAME']))
 		{
@@ -250,6 +267,7 @@ class listener implements EventSubscriberInterface
 	{
 		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
 		$forum_row = $event['forum_row'];
+		$row = $event['row'];
 		if (isset($this->user->lang['FORUM_NAME_' . $forum_row['FORUM_ID']]))
 		{
 			$forum_row['FORUM_NAME'] = $this->user->lang['FORUM_NAME_' . $forum_row['FORUM_ID']];
@@ -258,6 +276,12 @@ class listener implements EventSubscriberInterface
 		{
 			$forum_row['FORUM_DESC'] = $this->user->lang['FORUM_DESC_' . $forum_row['FORUM_ID']];
 		}
+		//if (isset ($forum_row['SUBFORUMS']) && $row['forum_subforumslist_type'])
+		if (isset ($forum_row['SUBFORUMS']) )
+		{
+		//print_r($forum_row['SUBFORUMS'] );
+		}
+		
 		$event['forum_row'] = $forum_row;
 	}
 
@@ -316,6 +340,162 @@ class listener implements EventSubscriberInterface
 			}
 			$event['navlinks_parents'] = $navlinks_parents;
 		}
+	}
+	//public function search_forum_modify_rowset($event)
+	public function search_modify_forum_select_list($event)
+	{
+		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
+		$rowset = $event['rowset'];
+		foreach ($rowset as $key => $row)
+		{
+		//print_r('$key = ' . $key);
+			if (isset($this->user->lang['FORUM_NAME_' . $row['forum_id']]))
+			{
+				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
+				$rowset[$key] = $row;
+			}
+			
+		}
+		 $event['rowset'] = $rowset;
+		 //print_r($event['rowset']);
+	}
+	//public function forum_list_modify_rowset($event)
+	public function get_forum_list_modify_data($event)
+	{
+	//print_r($event);
+		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
+		$rowset = $event['rowset'];
+		foreach ($rowset as $key => $row)
+		{
+		//print_r('$key = ' . $key);
+			if (isset($this->user->lang['FORUM_NAME_' . $row['forum_id']]))
+			{
+				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
+				$rowset[$key] = $row;
+			}
+			
+		}
+		 $event['rowset'] = $rowset;
+		 //print_r($event['rowset']);
+	}
+	public function forum_list_jumpbox_modify_rowset($event)
+	{
+		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
+		$rowset = $event['rowset'];
+		foreach ($rowset as $key => $row)
+		{
+		//print_r('$key = ' . $key);
+			if (isset($this->user->lang['FORUM_NAME_' . $row['forum_id']]))
+			{
+				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
+				$rowset[$key] = $row;
+			}
+			
+		}
+		 $event['rowset'] = $rowset;
+		 //print_r($event['rowset']);
+	}
+	public function forum_list_make_forum_select_modify_rowset($event)
+	{
+		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
+		$rowset = $event['rowset'];
+		foreach ($rowset as $key => $row)
+		{
+		//print_r('$key = ' . $key);
+			if (isset($this->user->lang['FORUM_NAME_' . $row['forum_id']]))
+			{
+				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
+				$rowset[$key] = $row;
+			}
+			
+		}
+		 $event['rowset'] = $rowset;
+		 //print_r($event['rowset']);
+	}
+	public function acp_forums_modify_rowset($event)
+	{
+		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
+		$rowset = $event['rowset'];
+		foreach ($rowset as $key => $row)
+		{
+		//print_r('$key = ' . $key);
+			if (isset($this->user->lang['FORUM_NAME_' . $row['forum_id']]))
+			{
+				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
+				$rowset[$key] = $row;
+			}
+			
+		}
+		 $event['rowset'] = $rowset;
+		 //print_r($event['rowset']);
+	}
+	public function acp_manage_forums_initialise_data($event)
+	{
+	//print_r('acp_manage_forums_initialise_data');
+		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
+		$forum_data = $event['forum_data'];
+		$row = $event['row'];
+		$forum_id = $event['forum_id'];
+		print_r($this->user->lang['FORUM_NAME_' .  $forum_id]);
+		if (isset($this->user->lang['FORUM_NAME_' .  $forum_id]))
+		{
+			$forum_data['forum_name'] = $this->user->lang['FORUM_NAME_' . $forum_id];
+			$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $forum_id];
+		print_r($forum_data['forum_name'] );
+		}
+		if (isset($this->user->lang['FORUM_DESC_' . $forum_id]))
+		{
+			$forum_data['forum_desc'] = $this->user->lang['FORUM_DESC_' .$forum_id];
+			$row['forum_desc'] = $this->user->lang['FORUM_DESC_' .$forum_id];
+		}
+
+		 $event['forum_data'] = $forum_data;
+		 $event['row'] = $row;
+		 //print_r($event['forum_data']);
+	}
+	public function display_forums_modify_forum_rows($event)
+	{
+		$this->user->add_lang_ext('alg/quicklanguage', 'quicklanguage');
+		$forum_rows = $event['forum_rows'];
+		$subforums = $event['subforums'];
+		$row = $event['row'];
+		$parent_id = $event['parent_id'];
+		//$forum_id = $event['forum_id'];
+		//print_r($forum_rows[486]);
+		if(isset($subforums[$parent_id]))
+		{
+			foreach ($subforums[$parent_id] as $subforum_id => $subforum_row)
+			{
+				if (isset($this->user->lang['FORUM_NAME_' .  $subforum_id]))
+				{
+				// print_r('id = ' . $subforum_id . ':' . $subforum_row['name'] . '***' );
+					$subforum_row['name'] = $this->user->lang['FORUM_NAME_' . $subforum_id];
+					$subforums[$parent_id][$subforum_id] = $subforum_row;
+					//print_r($subforums[$parent_id][$subforum_id]);
+					//$subforums[$parent_id][];
+				}
+			}
+			$event['subforums'] = $subforums;
+		//print_r($subforums[$parent_id]);
+		//$subf = $subforums[$parent_id];
+	   
+		//print_r('***');
+		}
+	return;
+		if (isset($this->user->lang['FORUM_NAME_' .  $forum_id]))
+		{
+			$forum_data['forum_name'] = $this->user->lang['FORUM_NAME_' . $forum_id];
+			$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $forum_id];
+		}
+		if (isset($this->user->lang['FORUM_DESC_' . $forum_id]))
+		{
+			$forum_data['forum_desc'] = $this->user->lang['FORUM_DESC_' .$forum_id];
+			$row['forum_desc'] = $this->user->lang['FORUM_DESC_' .$forum_id];
+		}
+
+		 $event['forum_data'] = $forum_data;
+		 $event['row'] = $row;
+		 //print_r($event['forum_data']);
 	}
 
 	public function request_cookie($name, $default = null)
