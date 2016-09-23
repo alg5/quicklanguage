@@ -1,5 +1,5 @@
 <?php
-/** 
+/**
 *
 * Quick Language extension for the phpBB Forum Software package.
 * Bulgarian translation by nickypopov (http://www.bulgaria-france.net)

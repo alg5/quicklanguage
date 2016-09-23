@@ -84,7 +84,7 @@ class acp_quicklanguage_module
 		{
 			$quicklanguage_is_link_translate_show = $request->variable('quicklanguage_is_link_translate_show', false);
 			$config->set('quicklanguage_is_link_translate_show', $quicklanguage_is_link_translate_show);
-				if($quicklanguage_is_link_translate_show)
+				if ($quicklanguage_is_link_translate_show)
 				{
 					$quicklanguage_translate_api_type = $request->variable('quicklanguage_translate_api_type', acp_quicklanguage_module::API_YANDEX);
 					$config->set('quicklanguage_translate_api_type', $quicklanguage_translate_api_type);

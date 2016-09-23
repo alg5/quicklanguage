@@ -1,11 +1,11 @@
 <?php
-/** 
+/**
 *
 * quicklanguage [English]
 *
 * @package quicklanguage
 * @copyright (c) 2014 alg
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License 
+* @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
 */
 
@@ -39,15 +39,10 @@ $lang = array_merge($lang, array(
 	'QUICK_LANG_EN_DISABLE'	=> 'Quick switch on English is blocked by administrator. You can do this action in the UCP ',
 	'QUICK_LANG_TRANSLATE_POST'	=> 'Translate to',
 	'QUICK_LANG_ORIGINAL_POST'	=> 'Show original text',
-// Hidden functionality to replace by example in french the forums names, the forums descriptions, the site name, the site description, etc..
-// You can use the language file that interests you. if your forum is English, you use the French language file, or Spanish, etc ..
-// 	'FORUM_NAME_1'	=> 'Forum/Category name having the id number 1',
-// 	'FORUM_DESC_1'	=> 'Forum/Category Description having the id number 1',
-// 	'FORUM_NAME_8'	=> 'Forum/Category name having the id number 8',
-// 	'FORUM_DESC_8'	=> 'Forum/Category description having the id number 8',
-// 	'FORUM_NAME_9'	=> 'Forum/Category name having the id number 9',
-// 	'SITENAME_NAME'	=> 'Site name',
-// 	'SITE_DESCRIPTION_NAME'	=> 'Site description',
-// 	'SITE_HOME_NAME'	=> 'Main website URL',
-// 	'INDEXPAGE_NAME'	=> 'Board index text',
+    'SITE_DESCRIPTION_NAME' => 'My Site description',
+    //for example
+	'FORUM_NAME_34'	=> 'Club news',
+	'FORUM_NAME_28'	=> 'Technical support',
+	'FORUM_NAME_486'	=> 'FORUM_NAME_486',
+    
 ));

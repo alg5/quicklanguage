@@ -1,11 +1,11 @@
 <?php
-/** 
+/**
 *
 * quicklanguage [Ukrainian]
 *
 * @package quicklanguage
 * @copyright (c) 2014 alg
-* @license http://opensource.org/licenses/gpl-license.php GNU Public License 
+* @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
 */
 
@@ -45,6 +45,8 @@ $lang = array_merge($lang, array(
 	'FORUM_NAME_8'	=> 'Hайд-парк',
 	'FORUM_DESC_8'	=> 'не цензурні питання',
 	'FORUM_NAME_9'	=> 'Зробити б життя з кого..',
+	'FORUM_NAME_18'	=> 'Чи Не занадто я культурен для вас',
+	'FORUM_NAME_55'	=> 'Важко висловити і не висловити...',
 	'SITENAME_NAME'	=> 'ваш_домен.uk',
 	'SITE_DESCRIPTION_NAME'	=> 'Короткий опис вашої конференції',
 	'SITE_HOME_NAME'	=> 'Домашня сторінка',

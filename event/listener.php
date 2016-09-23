@@ -237,12 +237,11 @@ class listener implements EventSubscriberInterface
 			$this->template->assign_vars(array('L_SITE_HOME'	=> $this->user->lang['SITE_HOME_NAME'],));
 		}
 		$forum =	(int) $this->request->variable('f', '0');
-		if($forum && isset($this->user->lang['FORUM_NAME_' . $forum]))
+		if ($forum && isset($this->user->lang['FORUM_NAME_' . $forum]))
 		{
 			$this->template->assign_vars(array('FORUM_NAME'	=> $this->user->lang['FORUM_NAME_' . $forum],));
 
 		}
-		
 
 		$index_path = append_sid("{$this->root_path}index.$this->php_ext");
 		if ($index_path && isset($this->user->lang['INDEXPAGE_NAME']))
@@ -281,7 +280,7 @@ class listener implements EventSubscriberInterface
 		{
 		//print_r($forum_row['SUBFORUMS'] );
 		}
-		
+
 		$event['forum_row'] = $forum_row;
 	}
 
@@ -330,7 +329,7 @@ class listener implements EventSubscriberInterface
 			$event['navlinks'] = $navlinks;
 		}
 		$navlinks_parents = $event['navlinks_parents'];
-		foreach($navlinks_parents as $key => $navlink)
+		foreach ($navlinks_parents as $key => $navlink)
 		{
 			$forum_id = $navlink['FORUM_ID'];
 			if (isset($this->user->lang['FORUM_NAME_' .  $navlink['FORUM_ID']]))
@@ -354,7 +353,7 @@ class listener implements EventSubscriberInterface
 				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
 				$rowset[$key] = $row;
 			}
-			
+
 		}
 		 $event['rowset'] = $rowset;
 		 //print_r($event['rowset']);
@@ -373,7 +372,7 @@ class listener implements EventSubscriberInterface
 				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
 				$rowset[$key] = $row;
 			}
-			
+
 		}
 		 $event['rowset'] = $rowset;
 		 //print_r($event['rowset']);
@@ -390,7 +389,7 @@ class listener implements EventSubscriberInterface
 				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
 				$rowset[$key] = $row;
 			}
-			
+
 		}
 		 $event['rowset'] = $rowset;
 		 //print_r($event['rowset']);
@@ -407,7 +406,7 @@ class listener implements EventSubscriberInterface
 				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
 				$rowset[$key] = $row;
 			}
-			
+
 		}
 		 $event['rowset'] = $rowset;
 		 //print_r($event['rowset']);
@@ -424,7 +423,7 @@ class listener implements EventSubscriberInterface
 				$row['forum_name'] = $this->user->lang['FORUM_NAME_' . $row['forum_id']];
 				$rowset[$key] = $row;
 			}
-			
+
 		}
 		 $event['rowset'] = $rowset;
 		 //print_r($event['rowset']);
@@ -462,7 +461,7 @@ class listener implements EventSubscriberInterface
 		$parent_id = $event['parent_id'];
 		//$forum_id = $event['forum_id'];
 		//print_r($forum_rows[486]);
-		if(isset($subforums[$parent_id]))
+		if (isset($subforums[$parent_id]))
 		{
 			foreach ($subforums[$parent_id] as $subforum_id => $subforum_row)
 			{
@@ -478,7 +477,7 @@ class listener implements EventSubscriberInterface
 			$event['subforums'] = $subforums;
 		//print_r($subforums[$parent_id]);
 		//$subf = $subforums[$parent_id];
-	   
+
 		//print_r('***');
 		}
 	return;
