@@ -40,4 +40,3 @@ $lang = array_merge($lang, array(
 	'QUICK_LANG_TRANSLATE_POST'	=> 'Переклад',
 	'QUICK_LANG_ORIGINAL_POST'	=> 'Показати текст оригіналу',
 	));
-
